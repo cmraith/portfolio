@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Pokemart Kiosk &ndash; Charlotte Raith</title>
+  <!-- Poppins, hosted with the site (style.css), its usual letters fetched straight away -->
+  <link rel="preload" href="fonts/poppins-400-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="fonts/poppins-500-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="fonts/poppins-600-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="css/style.css">
+  <!-- the name's font, fetched straight away so the name isn't kept waiting for it -->
+  <link rel="preload" href="fonts/nunito-900-latin.woff2" as="font" type="font/woff2" crossorigin>
+
+  <!-- Three.js (version 0.170.0) and the add-ons the scene uses, as on the Work page: the
+       copies hosted with the site, or, opened straight from a file, the same version from a
+       CDN, with Poppins from Google Fonts (both need an internet connection). -->
+  <script>
+    (function () {
+      var local = location.protocol !== 'file:';
+      var three = local ? './vendor/three/' : 'https://cdn.jsdelivr.net/npm/three@0.170.0/';
+      var map = document.createElement('script');
+      map.type = 'importmap';
+      map.textContent = JSON.stringify({ imports: {
+        'three': three + 'build/three.module.min.js',
+        'three/addons/': three + 'examples/jsm/',
+      } });
+      document.currentScript.after(map);
+      var files = ['build/three.module.min.js', 'examples/jsm/environments/RoomEnvironment.js', 'examples/jsm/geometries/RoundedBoxGeometry.js'];
+      files.forEach(function (file) {
+        var link = document.createElement('link');
+        link.rel = 'modulepreload';
+        link.href = three + file;
+        if (!local) link.crossOrigin = '';
+        document.head.appendChild(link);
+      });
+      if (!local) {
+        var fonts = document.createElement('link');
+        fonts.rel = 'stylesheet';
+        fonts.href = 'https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap';
+        document.head.appendChild(fonts);
+      }
+    })();
+  </script>
+</head>
+<!-- Pokemart Kiosk's process page, laid out as Yuki's is (yuki.html): it opens on a picture of the
+     project filling the window (in place of Yuki's video, until this one has its own), and
+     the first scroll down sinks it away and brings the rest forward: the yellow backdrop, the
+     nav bar (the name in the corner, and the menu), and the tall 3D Rube Goldberg machine,
+     with the project's cards pinned to its board, which the ball runs down gradually as the
+     visitor scrolls (js/tall-machine.js, js/tall-main.js). The cards are placeholders for
+     now, in the same eleven places as Yuki's (the machine leaves room for eleven, three of
+     them taller: data-height), each to be filled in with this project's own story. -->
+<body>
+  <!-- The project's picture, edge to edge. -->
+  <div class="stage screen">
+    <img class="bleed" src="img/placeholder.svg" alt="Placeholder image">
+
+    <!-- The project's name, large, in the bottom left corner. It leaves with the picture. -->
+    <h2 class="stage-title">Pokemart Kiosk</h2>
+
+    <!-- A hint that there is more below, in the same words and style as the one on the
+         Work page's opening screen. It leaves with the picture. -->
+    <p class="stage-hint" aria-hidden="true">Scroll <span>&darr;</span></p>
+
+    <!-- (a long name kept clear of the scroll hint beside it at the foot of the window, and
+         made smaller, only as far as it takes for its longest word to fit across what room
+         that leaves, with the same margin at the right as at the left) -->
+    <script>
+      (function () {
+        var title = document.currentScript.parentElement.querySelector('.stage-title');
+        var hint = title.parentElement.querySelector('.stage-hint');
+        function fit() {
+          title.style.fontSize = '';
+          title.style.maxWidth = '';
+          var margin = title.offsetLeft;
+          var room = title.parentElement.clientWidth - margin * 2;
+          if (hint) {
+            var h = hint.getBoundingClientRect();
+            var t = title.getBoundingClientRect();
+            if (h.left > margin && h.top < t.bottom && h.bottom > t.top) room = Math.min(room, h.left - margin * 2);
+          }
+          title.style.maxWidth = room + 'px';
+          var words = document.createRange();
+          words.selectNodeContents(title);
+          for (var i = 0; i < 3; i++) { // (a smaller name may wrap differently, so check again)
+            var wide = words.getBoundingClientRect().width;
+            if (wide <= room) break;
+            title.style.fontSize = Math.floor(parseFloat(getComputedStyle(title).fontSize) * room / wide) + 'px';
+          }
+        }
+        fit();
+        window.addEventListener('resize', fit);
+        if (document.fonts) document.fonts.ready.then(fit);
+      })();
+    </script>
+  </div>
+
+  <!-- The rest of the page, waiting close up behind the picture until the first scroll down
+       brings it forward (".screen" in style.css; see js/tall-main.js): the machine, and white
+       cards on its board. -->
+  <div class="machine-screen screen front">
+    <canvas id="scene"></canvas>
+    <!-- Eleven white cards, from the top down, pinned to the board in the spaces the machine
+         leaves for them, as on the Yuki page (".board-card" in style.css). Placeholders for
+         now, in the same layouts as Yuki's: words alone, words over a picture, pictures in a
+         row, a picture beside words, four pictures two by two, a column of three. The
+         pictures open up full size when clicked (js/cards.js). -->
+    <div class="board-cards">
+      <!-- The brief -->
+      <section class="board-card" aria-label="Brief">
+        <div class="card-inner card-words-only">
+          <p>Placeholder text. A short brief for this project will go here: what it was for, who it was with, and what it set out to do.</p>
+        </div>
+      </section>
+
+      <!-- Words over a picture, large, across a taller card -->
+      <section class="board-card" data-height="6.7" aria-labelledby="card-2">
+        <div class="card-inner">
+          <h2 class="card-title" id="card-2">Placeholder title</h2>
+          <p>Placeholder text. A few lines about this part of the project will go here: what it is, and what went into making it.</p>
+          <div class="card-row" style="--sum: 1.333">
+            <div class="card-picture" style="--ar: 4 / 3">
+              <img src="img/placeholder.svg" alt="Placeholder image" width="800" height="600" loading="lazy">
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Two pictures in a row, with a caption -->
+      <section class="board-card" aria-labelledby="card-3">
+        <div class="card-inner">
+          <h2 class="card-title" id="card-3">Placeholder title</h2>
+          <div class="card-row fit" style="--n: 2; --sum: 2.667">
+            <div class="card-picture" style="--ar: 4 / 3">
+              <img src="img/placeholder.svg" alt="Placeholder image" width="800" height="600" loading="lazy">
+            </div>
+            <div class="card-picture" style="--ar: 4 / 3">
+              <img src="img/placeholder.svg" alt="Placeholder image" width="800" height="600" loading="lazy">
+            </div>
+          </div>
+          <p class="card-caption">Placeholder caption</p>
+        </div>
+      </section>
+
+      <!-- Words over two pictures -->
+      <section class="board-card" aria-labelledby="card-4">
+        <div class="card-inner">
+          <h2 class="card-title" id="card-4">Placeholder title</h2>
+          <p>Placeholder text. A few lines about this part of the project will go here: what it is, and what went into making it.</p>
+          <div class="card-row" style="--n: 2; --sum: 2.667">
+            <div class="card-picture" style="--ar: 4 / 3">
+              <img src="img/placeholder.svg" alt="Placeholder image" width="800" height="600" loading="lazy">
+            </div>
+            <div class="card-picture" style="--ar: 4 / 3">
+              <img src="img/placeholder.svg" alt="Placeholder image" width="800" height="600" loading="lazy">
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- A picture beside words -->
+      <section class="board-card" aria-labelledby="card-5">
+        <div class="card-inner card-side" style="--split: 0.8fr">
+          <div class="card-picture" style="--ar: 4 / 3">
+            <img src="img/placeholder.svg" alt="Placeholder image" width="800" height="600" loading="lazy">
+          </div>
+          <div class="card-words">
+            <h2 class="card-title" id="card-5">Placeholder title</h2>
+            <p>Placeholder text. A few lines about this part of the project will go here: what it is, and what went into making it.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- One wide picture -->
+      <section class="board-card" aria-labelledby="card-6">
+        <div class="card-inner">
+          <h2 class="card-title" id="card-6">Placeholder title</h2>
+          <div class="card-row" style="--sum: 1.333">
+            <div class="card-picture" style="--ar: 4 / 3">
+              <img src="img/placeholder.svg" alt="Placeholder image" width="800" height="600" loading="lazy">
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Four pictures, two by two -->
+      <section class="board-card" aria-labelledby="card-7">
+        <div class="card-inner">
+          <h2 class="card-title" id="card-7">Placeholder title</h2>
+          <div class="card-frames">
+            <div class="card-picture fill"><img src="img/placeholder.svg" alt="Placeholder image" width="800" height="600" loading="lazy"></div>
+            <div class="card-picture fill"><img src="img/placeholder.svg" alt="Placeholder image" width="800" height="600" loading="lazy"></div>
+            <div class="card-picture fill"><img src="img/placeholder.svg" alt="Placeholder image" width="800" height="600" loading="lazy"></div>
+            <div class="card-picture fill"><img src="img/placeholder.svg" alt="Placeholder image" width="800" height="600" loading="lazy"></div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Words over a picture, large, across a taller card -->
+      <section class="board-card" data-height="5.5" aria-labelledby="card-8">
+        <div class="card-inner">
+          <h2 class="card-title" id="card-8">Placeholder title</h2>
+          <p>Placeholder text. A few lines about this part of the project will go here: what it is, and what went into making it.</p>
+          <div class="card-row" style="--sum: 1.333">
+            <div class="card-picture" style="--ar: 4 / 3">
+              <img src="img/placeholder.svg" alt="Placeholder image" width="800" height="600" loading="lazy">
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Words alone -->
+      <section class="board-card" aria-labelledby="card-9">
+        <div class="card-inner card-words-only">
+          <h2 class="card-title" id="card-9">Placeholder title</h2>
+          <p>Placeholder text. A few lines about this part of the project will go here: what it is, and what went into making it.</p>
+        </div>
+      </section>
+
+      <!-- One picture, widescreen -->
+      <section class="board-card" aria-labelledby="card-10">
+        <div class="card-inner">
+          <h2 class="card-title" id="card-10">Placeholder title</h2>
+          <div class="card-row" style="--sum: 1.778">
+            <div class="card-picture fill" style="--ar: 16 / 9">
+              <img src="img/placeholder.svg" alt="Placeholder image" width="800" height="600" loading="lazy">
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Three widescreen pictures, one under another, across a tall card -->
+      <section class="board-card" data-height="10.4" aria-labelledby="card-11">
+        <div class="card-inner">
+          <h2 class="card-title" id="card-11">Placeholder title</h2>
+          <div class="card-stack" style="--n: 3; --ar: 16 / 9">
+            <div class="card-picture fill"><img src="img/placeholder.svg" alt="Placeholder image" width="800" height="600" loading="lazy"></div>
+            <div class="card-picture fill"><img src="img/placeholder.svg" alt="Placeholder image" width="800" height="600" loading="lazy"></div>
+            <div class="card-picture fill"><img src="img/placeholder.svg" alt="Placeholder image" width="800" height="600" loading="lazy"></div>
+          </div>
+        </div>
+      </section>
+    </div>
+    <!-- Cream boxes behind the name and the menu button, keeping them clear of the machine and
+         the cards scrolling under them. Part of this layer, so they only show once the picture
+         has gone. -->
+    <div class="nav-box name-box" aria-hidden="true"></div>
+    <div class="nav-box menu-box" aria-hidden="true"></div>
+  </div>
+
+  <!-- For the keyboard and screen readers: the same as the push button at the foot of the
+       machine. Hidden until it has the focus. -->
+  <button type="button" class="back-to-top visually-hidden">Back to the top</button>
+
+  <p id="error" hidden></p>
+
+  <!-- A picture from a card, opened up to fill the window (see js/cards.js), as on the Yuki page. -->
+  <dialog class="viewer" aria-label="Picture, full size">
+    <img alt="">
+    <video controls playsinline preload="none" hidden></video>
+    <button type="button" class="viewer-close" aria-label="Close">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg>
+    </button>
+  </dialog>
+
+  <!-- The name, in the top left corner as on the other pages; here it leads back to Work. -->
+  <header class="title">
+    <a href="index.html"><h1>Charlotte<br>Raith</h1></a>
+  </header>
+
+  <!-- Sizes the name's two lines and builds its hover effect. Not deferred, so the name is
+       never shown at one size and then corrected. -->
+  <script src="js/name.js"></script>
+
+  <!-- The site navigation (menu button and panel), shared with the other pages. -->
+  <script defer src="js/menu.js"></script>
+  <!-- The pointer: reports where it is, and draws the circle cursor. Shared with the other pages. -->
+  <script defer src="js/cursor.js"></script>
+
+  <!-- Plain scripts (not modules), so they also load from a file: the palette and materials and
+       the reusable parts, shared with the Work page, then the machine and scene (the Yuki
+       page's). -->
+  <script defer src="js/materials.js"></script>
+  <script defer src="js/parts.js"></script>
+  <script defer src="js/tall-machine.js"></script>
+  <script defer src="js/tall-main.js"></script>
+  <!-- The cards' pictures. -->
+  <script defer src="js/cards.js"></script>
+
+  <!-- Runs after the deferred scripts: pulls in Three.js, then starts the scene. -->
+  <script type="module">
+    try {
+      const [THREE, { RoomEnvironment }, { RoundedBoxGeometry }] = await Promise.all([
+        import('three'),
+        import('three/addons/environments/RoomEnvironment.js'),
+        import('three/addons/geometries/RoundedBoxGeometry.js'),
+      ]);
+      window.THREE = THREE;
+      window.RG.RoundedBoxGeometry = RoundedBoxGeometry;
+      window.RG.startTall({ RoomEnvironment });
+    } catch (err) {
+      console.error(err);
+      const box = document.getElementById('error');
+      box.hidden = false;
+      box.textContent = 'Could not start the 3D scene (' + err.message + ').';
+    }
+  </script>
+</body>
+</html>

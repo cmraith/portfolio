@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Charlotte Raith</title>
+  <!-- Poppins, for everything except the name, hosted with the site (style.css), its usual
+       letters fetched straight away. If it fails to load, the system font is used. -->
+  <link rel="preload" href="fonts/poppins-400-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="fonts/poppins-500-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="fonts/poppins-600-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="css/style.css">
+  <!-- the name's font, fetched straight away so the name isn't kept waiting for it -->
+  <link rel="preload" href="fonts/nunito-900-latin.woff2" as="font" type="font/woff2" crossorigin>
+
+  <!-- Three.js (version 0.170.0): the minified build and the add-ons the scene uses. Served
+       from the web, the copies hosted with the site in vendor/three are used, and they start
+       downloading straight away, alongside everything else. Opened straight from a file, the
+       browser won't load those (it never loads module files from the disk), so the same
+       version comes from a CDN instead, and Poppins from Google Fonts, which needs an internet
+       connection. -->
+  <script>
+    (function () {
+      var local = location.protocol !== 'file:';
+      var three = local ? './vendor/three/' : 'https://cdn.jsdelivr.net/npm/three@0.170.0/';
+      var map = document.createElement('script');
+      map.type = 'importmap';
+      map.textContent = JSON.stringify({ imports: {
+        'three': three + 'build/three.module.min.js',
+        'three/addons/': three + 'examples/jsm/',
+      } });
+      document.currentScript.after(map);
+      var files = ['build/three.module.min.js', 'examples/jsm/controls/OrbitControls.js',
+        'examples/jsm/environments/RoomEnvironment.js', 'examples/jsm/geometries/RoundedBoxGeometry.js'];
+      files.forEach(function (file) {
+        var link = document.createElement('link');
+        link.rel = 'modulepreload';
+        link.href = three + file;
+        if (!local) link.crossOrigin = '';
+        document.head.appendChild(link);
+      });
+      if (!local) {
+        var fonts = document.createElement('link');
+        fonts.rel = 'stylesheet';
+        fonts.href = 'https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap';
+        document.head.appendChild(fonts);
+      }
+    })();
+  </script>
+</head>
+<body class="intro">
+  <canvas id="scene"></canvas>
+
+  <header class="title">
+    <h1>Charlotte<br>Raith</h1>
+  </header>
+
+  <!-- Opening screen only, under the large name: a subtitle, then the prompt. -->
+  <div class="intro-copy">
+    <p class="intro-subtitle">Interaction &amp; Motion Design Portfolio</p>
+    <p class="scroll-hint" aria-hidden="true">Scroll to begin <span>&darr;</span></p>
+  </div>
+
+  <!-- One dot per stop; main.js fills this in. Clicking a dot runs the machine to that stop. -->
+  <nav class="dots" aria-label="Steps"></nav>
+
+  <!-- Sizes the large intro name (see style.css). Runs right here, before the page is first
+       drawn, so the name is never shown at one size and then corrected. -->
+  <script>
+    (function () {
+      var title = document.querySelector('.title');
+      var text = title.querySelector('h1');
+      var root = document.documentElement;
+      var raster = 1; // (--title-raster, as set last)
+      function fit() {
+        var introSize = Math.min(Math.max(window.innerWidth * 0.09, 56), 200);
+        // the name's own size in its corner (it's drawn at `raster` times that)
+        var size = parseFloat(getComputedStyle(text).fontSize) / raster;
+        var scale = introSize / size;
+        root.style.setProperty('--intro-scale', scale);
+        // drawn at its large size, so it's sharp there, and shrunk to fit its corner (style.css)
+        raster = scale;
+        root.style.setProperty('--title-raster', raster);
+      }
+      fit();
+      window.addEventListener('resize', fit);
+    })();
+  </script>
+
+  <!-- Sizes the name's two lines and splits it into letters for its hover effect. Not
+       deferred, for the same reason. -->
+  <script src="js/name.js"></script>
+
+  <!-- One container per step. Each appears in the open part of the window when the ball stops
+       at the end of that step. Each holds an image or a video with a title, a description and tags under it, and a
+       "see my process!" sticker linking to its process page (Yuki's, yuki.html, written up;
+       the others, etch-a-sketch.html, pokemart-kiosk.html and project-4.html to
+       project-7.html, laid out the same way but placeholders for now). Apart from the first
+       three, the containers' contents are still placeholders. -->
+  <div class="panels">
+    <section class="panel" data-step="1">
+      <!-- Starts playing, with sound, each time this container appears (js/main.js), as
+           Yuki's does; the player's own controls let the visitor pause it and mute it. -->
+      <video src="video/multiplayer.mp4" loop playsinline controls preload="metadata" aria-label="The Digital Etch-a-Sketch in play"></video>
+      <h2>Digital Etch-a-Sketch</h2>
+      <p>A dimensional Etch-a-Sketch in vanilla HTML/CSS/JS, controlled by a matching cardboard Arduino Leonardo controller.</p>
+      <ul class="tags">
+        <li>Interaction</li>
+        <li>Game Design</li>
+        <li>Solo Project</li>
+        <li>2026</li>
+      </ul>
+      <a class="sticker" href="etch-a-sketch.html" aria-label="See my process for Digital Etch-a-Sketch">
+        <svg viewBox="0 0 280 184" aria-hidden="true">
+          <path class="edge" d="M129.5 135.8 A 120 64 0 1 0 89.3 130 L 62 172 Z" />
+          <path class="spark-edge" d="M232 30 h28 M239 18 l14 24 M253 18 l-14 24" />
+          <path class="spark-edge" d="M10 100 h24 M16 89.6 l12 20.8 M28 89.6 l-12 20.8" />
+          <path class="bubble" d="M129.5 135.8 A 120 64 0 1 0 89.3 130 L 62 172 Z" />
+          <path class="spark" d="M232 30 h28 M239 18 l14 24 M253 18 l-14 24" />
+          <path class="spark" d="M10 100 h24 M16 89.6 l12 20.8 M28 89.6 l-12 20.8" />
+          <text x="146" y="51">see my</text>
+          <text x="146" y="89">process!</text>
+        </svg>
+      </a>
+    </section>
+    <section class="panel" data-step="2">
+      <!-- Starts playing, with sound, each time this container appears (js/main.js); the
+           player's own controls let the visitor pause it and mute it. -->
+      <video src="video/yuki.mp4" loop playsinline controls preload="metadata"></video>
+      <h2>Yuki</h2>
+      <p>A commercial for a fictional probiotic yogurt drink that blends 3D motion with frame-by-frame animation.</p>
+      <ul class="tags">
+        <li>Animation</li>
+        <li>3D Motion</li>
+        <li>Team Project</li>
+        <li>2026</li>
+      </ul>
+      <!-- A speech-bubble sticker on the card's corner, saying "see my process!", with two
+           little asterisks flying off it. It is the link to the project's process page. The
+           bubble is one shape: an oval with a pointed tail at its bottom left. -->
+      <a class="sticker" href="yuki.html" aria-label="See my process for Yuki">
+        <svg viewBox="0 0 280 184" aria-hidden="true">
+          <!-- the white die-cut edge, under everything -->
+          <path class="edge" d="M129.5 135.8 A 120 64 0 1 0 89.3 130 L 62 172 Z" />
+          <path class="spark-edge" d="M232 30 h28 M239 18 l14 24 M253 18 l-14 24" />
+          <path class="spark-edge" d="M10 100 h24 M16 89.6 l12 20.8 M28 89.6 l-12 20.8" />
+          <!-- the bubble, the asterisks and the words -->
+          <path class="bubble" d="M129.5 135.8 A 120 64 0 1 0 89.3 130 L 62 172 Z" />
+          <path class="spark" d="M232 30 h28 M239 18 l14 24 M253 18 l-14 24" />
+          <path class="spark" d="M10 100 h24 M16 89.6 l12 20.8 M28 89.6 l-12 20.8" />
+          <text x="146" y="51">see my</text>
+          <text x="146" y="89">process!</text>
+        </svg>
+      </a>
+    </section>
+    <section class="panel" data-step="3">
+      <img src="img/placeholder.svg" alt="Placeholder image">
+      <h2>Pokemart Kiosk</h2>
+      <p>Placeholder description. A couple of short lines about this piece will go here: what it is, and what went into making it.</p>
+      <ul class="tags">
+        <li>Interaction</li>
+        <li>Brand Design</li>
+        <li>Solo Project</li>
+        <li>2026</li>
+      </ul>
+      <a class="sticker" href="pokemart-kiosk.html" aria-label="See my process for Pokemart Kiosk">
+        <svg viewBox="0 0 280 184" aria-hidden="true">
+          <path class="edge" d="M129.5 135.8 A 120 64 0 1 0 89.3 130 L 62 172 Z" />
+          <path class="spark-edge" d="M232 30 h28 M239 18 l14 24 M253 18 l-14 24" />
+          <path class="spark-edge" d="M10 100 h24 M16 89.6 l12 20.8 M28 89.6 l-12 20.8" />
+          <path class="bubble" d="M129.5 135.8 A 120 64 0 1 0 89.3 130 L 62 172 Z" />
+          <path class="spark" d="M232 30 h28 M239 18 l14 24 M253 18 l-14 24" />
+          <path class="spark" d="M10 100 h24 M16 89.6 l12 20.8 M28 89.6 l-12 20.8" />
+          <text x="146" y="51">see my</text>
+          <text x="146" y="89">process!</text>
+        </svg>
+      </a>
+    </section>
+    <section class="panel" data-step="4">
+      <img src="img/placeholder.svg" alt="Placeholder image">
+      <h2>Placeholder title</h2>
+      <p>Placeholder description. A couple of short lines about this piece will go here: what it is, and what went into making it.</p>
+      <ul class="tags">
+        <li>Tag</li>
+        <li>Tag</li>
+        <li>Tag</li>
+      </ul>
+      <a class="sticker" href="project-4.html" aria-label="See my process for this project">
+        <svg viewBox="0 0 280 184" aria-hidden="true">
+          <path class="edge" d="M129.5 135.8 A 120 64 0 1 0 89.3 130 L 62 172 Z" />
+          <path class="spark-edge" d="M232 30 h28 M239 18 l14 24 M253 18 l-14 24" />
+          <path class="spark-edge" d="M10 100 h24 M16 89.6 l12 20.8 M28 89.6 l-12 20.8" />
+          <path class="bubble" d="M129.5 135.8 A 120 64 0 1 0 89.3 130 L 62 172 Z" />
+          <path class="spark" d="M232 30 h28 M239 18 l14 24 M253 18 l-14 24" />
+          <path class="spark" d="M10 100 h24 M16 89.6 l12 20.8 M28 89.6 l-12 20.8" />
+          <text x="146" y="51">see my</text>
+          <text x="146" y="89">process!</text>
+        </svg>
+      </a>
+    </section>
+    <section class="panel" data-step="5">
+      <img src="img/placeholder.svg" alt="Placeholder image">
+      <h2>Placeholder title</h2>
+      <p>Placeholder description. A couple of short lines about this piece will go here: what it is, and what went into making it.</p>
+      <ul class="tags">
+        <li>Tag</li>
+        <li>Tag</li>
+        <li>Tag</li>
+      </ul>
+      <a class="sticker" href="project-5.html" aria-label="See my process for this project">
+        <svg viewBox="0 0 280 184" aria-hidden="true">
+          <path class="edge" d="M129.5 135.8 A 120 64 0 1 0 89.3 130 L 62 172 Z" />
+          <path class="spark-edge" d="M232 30 h28 M239 18 l14 24 M253 18 l-14 24" />
+          <path class="spark-edge" d="M10 100 h24 M16 89.6 l12 20.8 M28 89.6 l-12 20.8" />
+          <path class="bubble" d="M129.5 135.8 A 120 64 0 1 0 89.3 130 L 62 172 Z" />
+          <path class="spark" d="M232 30 h28 M239 18 l14 24 M253 18 l-14 24" />
+          <path class="spark" d="M10 100 h24 M16 89.6 l12 20.8 M28 89.6 l-12 20.8" />
+          <text x="146" y="51">see my</text>
+          <text x="146" y="89">process!</text>
+        </svg>
+      </a>
+    </section>
+    <section class="panel" data-step="6">
+      <img src="img/placeholder.svg" alt="Placeholder image">
+      <h2>Placeholder title</h2>
+      <p>Placeholder description. A couple of short lines about this piece will go here: what it is, and what went into making it.</p>
+      <ul class="tags">
+        <li>Tag</li>
+        <li>Tag</li>
+        <li>Tag</li>
+      </ul>
+      <a class="sticker" href="project-6.html" aria-label="See my process for this project">
+        <svg viewBox="0 0 280 184" aria-hidden="true">
+          <path class="edge" d="M129.5 135.8 A 120 64 0 1 0 89.3 130 L 62 172 Z" />
+          <path class="spark-edge" d="M232 30 h28 M239 18 l14 24 M253 18 l-14 24" />
+          <path class="spark-edge" d="M10 100 h24 M16 89.6 l12 20.8 M28 89.6 l-12 20.8" />
+          <path class="bubble" d="M129.5 135.8 A 120 64 0 1 0 89.3 130 L 62 172 Z" />
+          <path class="spark" d="M232 30 h28 M239 18 l14 24 M253 18 l-14 24" />
+          <path class="spark" d="M10 100 h24 M16 89.6 l12 20.8 M28 89.6 l-12 20.8" />
+          <text x="146" y="51">see my</text>
+          <text x="146" y="89">process!</text>
+        </svg>
+      </a>
+    </section>
+    <!-- The last project, shown at the finish, the ball home again -->
+    <section class="panel" data-step="7">
+      <img src="img/placeholder.svg" alt="Placeholder image">
+      <h2>Placeholder title</h2>
+      <p>Placeholder description. A couple of short lines about this piece will go here: what it is, and what went into making it.</p>
+      <ul class="tags">
+        <li>Tag</li>
+        <li>Tag</li>
+        <li>Tag</li>
+      </ul>
+      <a class="sticker" href="project-7.html" aria-label="See my process for this project">
+        <svg viewBox="0 0 280 184" aria-hidden="true">
+          <path class="edge" d="M129.5 135.8 A 120 64 0 1 0 89.3 130 L 62 172 Z" />
+          <path class="spark-edge" d="M232 30 h28 M239 18 l14 24 M253 18 l-14 24" />
+          <path class="spark-edge" d="M10 100 h24 M16 89.6 l12 20.8 M28 89.6 l-12 20.8" />
+          <path class="bubble" d="M129.5 135.8 A 120 64 0 1 0 89.3 130 L 62 172 Z" />
+          <path class="spark" d="M232 30 h28 M239 18 l14 24 M253 18 l-14 24" />
+          <path class="spark" d="M10 100 h24 M16 89.6 l12 20.8 M28 89.6 l-12 20.8" />
+          <text x="146" y="51">see my</text>
+          <text x="146" y="89">process!</text>
+        </svg>
+      </a>
+    </section>
+  </div>
+
+  <p id="error" hidden></p>
+
+  <!-- Plain scripts (not modules) so they also load from file://. They only define builders on window.RG. -->
+  <script defer src="js/materials.js"></script>
+  <script defer src="js/parts.js"></script>
+  <script defer src="js/machine.js"></script>
+  <script defer src="js/decor.js"></script>
+  <script defer src="js/main.js"></script>
+  <!-- The site navigation (menu button and panel), shared with the other pages. -->
+  <script defer src="js/menu.js"></script>
+  <!-- The pointer: reports where it is, and draws the circle cursor. Shared with the other pages. -->
+  <script defer src="js/cursor.js"></script>
+  <!-- Tilde, the mascot (js/mascot.js, its body, then js/mascot-ai.js, its mind), is switched
+       off for now: to bring it back, load those two scripts here, deferred, as the others are. -->
+
+  <!-- Runs after the deferred scripts: pulls in Three.js, then starts the scene. -->
+  <script type="module">
+    try {
+      // all four at once, not one after another
+      const [THREE, { OrbitControls }, { RoomEnvironment }, { RoundedBoxGeometry }] = await Promise.all([
+        import('three'),
+        import('three/addons/controls/OrbitControls.js'),
+        import('three/addons/environments/RoomEnvironment.js'),
+        import('three/addons/geometries/RoundedBoxGeometry.js'),
+      ]);
+      window.THREE = THREE;
+      window.RG.RoundedBoxGeometry = RoundedBoxGeometry;
+      window.RG.start({ OrbitControls, RoomEnvironment });
+    } catch (err) {
+      console.error(err);
+      const box = document.getElementById('error');
+      box.hidden = false;
+      box.textContent = 'Could not start the 3D scene (' + err.message + ').';
+    }
+  </script>
+</body>
+</html>

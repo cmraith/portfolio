@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Yuki &ndash; Charlotte Raith</title>
+  <!-- Poppins, hosted with the site (style.css), its usual letters fetched straight away -->
+  <link rel="preload" href="fonts/poppins-400-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="fonts/poppins-500-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="fonts/poppins-600-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="css/style.css">
+  <!-- the name's font, fetched straight away so the name isn't kept waiting for it -->
+  <link rel="preload" href="fonts/nunito-900-latin.woff2" as="font" type="font/woff2" crossorigin>
+
+  <!-- Three.js (version 0.170.0) and the add-ons the scene uses, as on the Work page: the
+       copies hosted with the site, or, opened straight from a file, the same version from a
+       CDN, with Poppins from Google Fonts (both need an internet connection). -->
+  <script>
+    (function () {
+      var local = location.protocol !== 'file:';
+      var three = local ? './vendor/three/' : 'https://cdn.jsdelivr.net/npm/three@0.170.0/';
+      var map = document.createElement('script');
+      map.type = 'importmap';
+      map.textContent = JSON.stringify({ imports: {
+        'three': three + 'build/three.module.min.js',
+        'three/addons/': three + 'examples/jsm/',
+      } });
+      document.currentScript.after(map);
+      var files = ['build/three.module.min.js', 'examples/jsm/environments/RoomEnvironment.js', 'examples/jsm/geometries/RoundedBoxGeometry.js'];
+      files.forEach(function (file) {
+        var link = document.createElement('link');
+        link.rel = 'modulepreload';
+        link.href = three + file;
+        if (!local) link.crossOrigin = '';
+        document.head.appendChild(link);
+      });
+      if (!local) {
+        var fonts = document.createElement('link');
+        fonts.rel = 'stylesheet';
+        fonts.href = 'https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap';
+        document.head.appendChild(fonts);
+      }
+    })();
+  </script>
+  <!-- Opened straight from a file, the 3D scene can't use the bottle label's picture file, so
+       it gets the picture written out in full instead (js/label-picture.js), loaded here, before
+       the scene starts. -->
+  <script>
+    if (location.protocol === 'file:') document.write('<script src="js/label-picture.js"><\/script>');
+  </script>
+</head>
+<!-- Yuki's process page. It opens on the finished animation filling the window, and the
+     first scroll down sinks it away and brings the rest forward: the yellow backdrop, the nav
+     bar (the name in the corner, and the menu), and a second 3D Rube Goldberg machine, tall
+     and narrow, with the project's cards pinned to its board, which the ball runs down
+     gradually as the visitor scrolls (js/tall-machine.js, js/tall-main.js). -->
+<body>
+  <!-- The animation, edge to edge, as on the Yuki page. It starts by itself with its sound on
+       (see js/tall-main.js); clicking it, or the buttons in its corner, pauses it and mutes it. -->
+  <div class="stage screen">
+    <video class="bleed" src="video/yuki.mp4" loop playsinline preload="auto"></video>
+
+    <div class="player">
+      <button type="button" class="play" aria-label="Pause">
+        <svg class="when-on" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 5h3.5v14H7zM13.5 5H17v14h-3.5z"/></svg>
+        <svg class="when-off" viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5l11 7-11 7z"/></svg>
+      </button>
+      <button type="button" class="sound" aria-label="Mute">
+        <svg class="when-on" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 9.5h3.5L12 5.5v13l-4.5-4H4z"/><path class="line" d="M15 9a4.2 4.2 0 0 1 0 6M17.5 6.5a7.8 7.8 0 0 1 0 11"/></svg>
+        <svg class="when-off" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 9.5h3.5L12 5.5v13l-4.5-4H4z"/><path class="line" d="M15.5 9.5l5 5M20.5 9.5l-5 5"/></svg>
+      </button>
+    </div>
+
+    <!-- The project's name, large, in the bottom left corner. It leaves with the video. -->
+    <h2 class="stage-title">Yuki</h2>
+
+    <!-- A hint that there is more below, in the same words and style as the one on the
+         Work page's opening screen. It leaves with the video. -->
+    <p class="stage-hint" aria-hidden="true">Scroll <span>&darr;</span></p>
+  </div>
+
+  <!-- The rest of the page, as on the Yuki page waiting close up behind the video until the
+       first scroll down brings it forward (".screen" in style.css; see js/tall-main.js): the
+       machine, and white cards on its board. -->
+  <div class="machine-screen screen front">
+    <canvas id="scene"></canvas>
+    <!-- Eleven white cards, from the top down, pinned to the board in the spaces the machine
+         leaves for them beside the ball's lanes, so they scroll with the machine (".board-card"
+         in style.css; js/tall-machine.js leaves the spaces, js/tall-main.js places the cards).
+         They tell the story of the project, as the Yuki page does, one part a card; each card's
+         words and pictures are sized to the card (see ".card-inner"). The pictures open up
+         full size when clicked, and the animatics load and play as the Yuki page's do
+         (js/cards.js). -->
+    <div class="board-cards">
+      <!-- The brief -->
+      <section class="board-card" aria-label="Brief">
+        <div class="card-inner card-words-only">
+          <p>For this project, I worked with designers <a class="card-person" href="https://alecemotion.framer.website/" target="_blank" rel="noopener">Denna Alece-Dom</a> and <strong class="card-person">Tyler Townley</strong>. Our original prompt was to produce a 30-second motion graphics animation that introduces &lsquo;Nature&rsquo;s Culture&rsquo; (a fictional probiotic yogurt drink), communicates its health benefits, and positions it as a delicious, organic, and probiotic-powered beverage for modern wellness seekers.</p>
+        </div>
+      </section>
+
+      <!-- The first storyboard: its words over it, and the storyboard large, across the card
+           (a taller card than most: data-height, in the scene's units; see js/tall-main.js) -->
+      <section class="board-card" data-height="6.7" aria-labelledby="card-storyboard">
+        <div class="card-inner">
+          <h2 class="card-title" id="card-storyboard">Storyboard</h2>
+          <p>Our first storyboard focused largely on a bold, toon-shaded style. We took inspiration on the modern Japanese graphic design style of bold colors, bubbly font, and a cute and memorable mascot. At this stage in the project, we were still attempting to work with the constraints of the &lsquo;Nature&rsquo;s Culture&rsquo; brand concept.</p>
+          <div class="card-row" style="--sum: 1.069">
+            <div class="card-picture" style="--ar: 1073 / 1004">
+              <img src="img/yuki/storyboard-rough.webp" alt="Pencil storyboard of eleven frames: a fade in, yogurt flowing downwards, fruit spiralling in, a zoom, a bottle, and the Nature's Culture name" width="1073" height="1004" loading="lazy">
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- The AI mockups -->
+      <section class="board-card" aria-labelledby="card-mockups">
+        <div class="card-inner">
+          <h2 class="card-title" id="card-mockups">Mockups</h2>
+          <div class="card-row fit" style="--n: 2; --sum: 3.321">
+            <div class="card-picture" style="--ar: 966 / 554">
+              <img src="img/yuki/ai-mockups-1.webp" alt="Four generated mockups of Nature's Culture yogurt bottles: on a kitchen counter, in splashes of yogurt with fruit, and in a meadow" width="966" height="554" loading="lazy">
+            </div>
+            <div class="card-picture" style="--ar: 875 / 555">
+              <img src="img/yuki/ai-mockups-2.webp" alt="Five more generated mockups of Nature's Culture bottles: in splashes with peach and mango, with matcha and yuzu, and on stone plinths" width="875" height="555" loading="lazy">
+            </div>
+          </div>
+          <p class="card-caption">AI-generated mockups made with Gemini</p>
+        </div>
+      </section>
+
+      <!-- The new name and logo -->
+      <section class="board-card" aria-labelledby="card-branding">
+        <div class="card-inner">
+          <h2 class="card-title" id="card-branding">Branding</h2>
+          <p>Once we were given permission to think outside the premade &lsquo;Nature&rsquo;s Culture&rsquo; concept, we were able to redesign the assets we were given to better align with our goals. We started with the brand name and logo: Y&#363;ki means organic in Japanese, and it was punchy-sounding and easy to remember.</p>
+          <div class="card-row" style="--n: 2; --sum: 4.238">
+            <div class="card-picture" style="--ar: 927 / 377">
+              <img src="img/yuki/logo-variants.png" alt="Five versions of the Y&#363;ki logo in black outline, each with a different shape dotting the i" width="927" height="377" loading="lazy">
+            </div>
+            <div class="card-picture" style="--ar: 886 / 498">
+              <img src="img/yuki/bottle-ad.png" alt="A strawberry Y&#363;ki bottle beside the pink Y&#363;ki logo and the line: Taste the difference your body will love" width="886" height="498" loading="lazy">
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Still branding: the mascots, two die-cut stickers stuck on side by side (".card-stickers"
+           in style.css) -->
+      <section class="board-card" aria-labelledby="card-mascots">
+        <div class="card-inner card-side" style="--split: 0.55fr">
+          <div class="card-stickers">
+            <div class="card-picture card-sticker" style="--ar: 289 / 449; --h: 44%; --tilt: -4deg; --tilt-hover: -10deg; left: 3%; top: 3%; bottom: auto">
+              <img src="img/yuki/tsubu.png" alt="Tsubu, Y&#363;ki's strawberry mascot" width="289" height="449" loading="lazy">
+            </div>
+            <div class="card-picture card-sticker" style="--ar: 256 / 313; --h: 42%; --tilt: 5deg; --tilt-hover: 11deg; right: 3%">
+              <img src="img/yuki/mascot-blueberry.png" alt="Y&#363;ki's blueberry mascot" width="256" height="313" loading="lazy">
+            </div>
+          </div>
+          <div class="card-words">
+            <h2 class="card-title" id="card-mascots">Mascots</h2>
+            <p>I designed a series of Sanrio-style characters for the Yuki rebrand. Each yogurt flavor (eg. strawberry, blueberry, vanilla, etc.) has its own &lsquo;mascot&rsquo;, and the mascots interact with each other in advertisements and on blended flavors.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Still branding: the flat bottle label. Not a picture here but a real paper label on the
+           machine's board, which unrolls into this space as it comes into view (js/tall-main.js
+           places it, from where this space is; js/tall-machine.js makes it) -->
+      <section class="board-card" aria-labelledby="card-label">
+        <div class="card-inner">
+          <h2 class="card-title" id="card-label">Label</h2>
+          <div class="card-row" style="--sum: 4">
+            <div class="card-picture card-label-space" style="--ar: 1820 / 455" role="img" aria-label="The flat strawberry Y&#363;ki bottle label: the logo and strawberry mascot, nutrition facts, ingredients, and a barcode"></div>
+          </div>
+        </div>
+      </section>
+
+      <!-- The style frames, two by two -->
+      <section class="board-card" aria-labelledby="card-frames">
+        <div class="card-inner">
+          <h2 class="card-title" id="card-frames">Style Frames</h2>
+          <div class="card-frames">
+            <div class="card-picture fill"><img src="img/yuki/frame-bottle-mango.webp" alt="A glass bottle with a teal label band, cubes of mango tumbling through it, on lilac" width="1920" height="1090" loading="lazy"></div>
+            <div class="card-picture fill"><img src="img/yuki/frame-landscape.webp" alt="A grassy hillside under a silver birch, with mountains behind" width="1920" height="1080" loading="lazy"></div>
+            <div class="card-picture fill"><img src="img/yuki/frame-splash.webp" alt="A thick splash of yogurt against a mint green background" width="1920" height="1080" loading="lazy"></div>
+            <div class="card-picture fill"><img src="img/yuki/frame-swirl.webp" alt="Strawberries dropping into a swirl of yogurt, seen from above" width="1920" height="1080" loading="lazy"></div>
+          </div>
+        </div>
+      </section>
+
+      <!-- The second storyboard, made for the rebrand: as the first, its words over it, and the
+           storyboard large, across a taller card -->
+      <section class="board-card" data-height="5.5" aria-labelledby="card-final">
+        <div class="card-inner">
+          <h2 class="card-title" id="card-final">Final Storyboard</h2>
+          <p>Our rebranding also required a new storyboard that properly represented Yuki. We chose to keep the toon-shaded style and bubbly lettering, but reduced the scope to just strawberry yogurt and added references to Yuki&rsquo;s new strawberry mascot.</p>
+          <div class="card-row" style="--sum: 1.425">
+            <div class="card-picture" style="--ar: 2000 / 1404">
+              <img src="img/yuki/storyboard-final.webp" alt="Pencil storyboard of sixteen frames: a bowl of fruit in a mountain landscape, strawberries tumbling and swirling, yogurt pouring around a bottle, and the finished bottle beside its name" width="2000" height="1404" loading="lazy">
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- The sound -->
+      <section class="board-card" aria-labelledby="card-sound">
+        <div class="card-inner card-words-only">
+          <h2 class="card-title" id="card-sound">Sound</h2>
+          <p>For the &ldquo;Nature&rsquo;s Culture&rdquo; prompt, we were given an AI-generated script and audio to use. For our rebrand, we decided to re-design the audio as well, using non-copyright audio and a custom voiceover from journalist <strong class="card-person">Mariella Santiago</strong>.</p>
+        </div>
+      </section>
+
+      <!-- The animatic: its first frame, with a play badge; clicked, it opens up and plays with
+           its sound -->
+      <section class="board-card" aria-labelledby="card-animatic">
+        <div class="card-inner">
+          <h2 class="card-title" id="card-animatic">Animatic</h2>
+          <div class="card-row" style="--sum: 1.778">
+            <div class="card-picture fill ink" style="--ar: 16 / 9">
+              <video data-src="video/animatic.mp4#t=15" data-full="video/animatic.mp4" muted playsinline preload="metadata" aria-label="The first animatic for the Yuki commercial"></video>
+              <span class="play-badge" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M8 5.5v13l11-6.5z"/></svg></span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Animation testing: three short animatics, one under another, each across the card
+           (a tall one: data-height), playing on its own, silently and round and round, while
+           it's in view -->
+      <section class="board-card" data-height="10.4" aria-labelledby="card-testing">
+        <div class="card-inner">
+          <h2 class="card-title" id="card-testing">Animation Testing</h2>
+          <div class="card-stack" style="--n: 3; --ar: 16 / 9">
+            <div class="card-picture fill ink">
+              <video data-src="video/animatic-2-540.mp4#t=2.3" data-full="video/animatic-2.mp4" data-loop data-autoplay loop muted playsinline preload="metadata" aria-label="The second animatic: Tsubu, the strawberry mascot, peeking in"></video>
+            </div>
+            <div class="card-picture fill ink">
+              <video data-src="video/animatic-3-540.mp4#t=2.6" data-full="video/animatic-3.mp4" data-loop data-autoplay loop muted playsinline preload="metadata" aria-label="The third animatic: Tsubu, the strawberry mascot, peeking in, in colour"></video>
+            </div>
+            <div class="card-picture fill ink">
+              <video data-src="video/animatic-4-540.mp4#t=2.3" data-full="video/animatic-4.mp4" data-loop data-autoplay loop muted playsinline preload="metadata" aria-label="The fourth animatic: Tsubu, the strawberry mascot, jumping in and landing on the Y&#363;ki logo"></video>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+    <!-- Cream boxes behind the name and the menu button, keeping them clear of the machine and
+         the cards scrolling under them. Part of this layer, so they only show once the video
+         has gone. -->
+    <div class="nav-box name-box" aria-hidden="true"></div>
+    <div class="nav-box menu-box" aria-hidden="true"></div>
+  </div>
+  <!-- For the keyboard and screen readers: the same as the push button at the foot of the
+       machine. Hidden until it has the focus. -->
+  <button type="button" class="back-to-top visually-hidden">Back to the top</button>
+  <p id="error" hidden></p>
+
+  <!-- A picture from a card, opened up to fill the window (see js/cards.js), as on the Yuki page. -->
+  <dialog class="viewer" aria-label="Picture, full size">
+    <img alt="">
+    <video controls playsinline preload="none" hidden></video>
+    <button type="button" class="viewer-close" aria-label="Close">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg>
+    </button>
+  </dialog>
+
+  <!-- The name, in the top left corner as on the other pages; here it leads back to Work. -->
+  <header class="title">
+    <a href="index.html"><h1>Charlotte<br>Raith</h1></a>
+  </header>
+  <!-- Sizes the name's two lines and builds its hover effect. Not deferred, so the name is
+       never shown at one size and then corrected. -->
+  <script src="js/name.js"></script>
+
+  <!-- The site navigation (menu button and panel), shared with the other pages. -->
+  <script defer src="js/menu.js"></script>
+  <!-- The pointer: reports where it is, and draws the circle cursor. Shared with the other pages. -->
+  <script defer src="js/cursor.js"></script>
+  <!-- Tilde, the mascot (js/mascot.js, its body, then js/mascot-ai.js, its mind), is switched
+       off for now: to bring it back, load those two scripts here, deferred, as the others are. -->
+
+  <!-- Plain scripts (not modules), so they also load from a file: the palette and materials and
+       the reusable parts, shared with the Work page, then this page's machine and scene. -->
+  <script defer src="js/materials.js"></script>
+  <script defer src="js/parts.js"></script>
+  <script defer src="js/tall-machine.js"></script>
+  <script defer src="js/tall-main.js"></script>
+  <!-- The cards' pictures and animatics. -->
+  <script defer src="js/cards.js"></script>
+
+  <!-- Runs after the deferred scripts: pulls in Three.js, then starts the scene. -->
+  <script type="module">
+    try {
+      const [THREE, { RoomEnvironment }, { RoundedBoxGeometry }] = await Promise.all([
+        import('three'),
+        import('three/addons/environments/RoomEnvironment.js'),
+        import('three/addons/geometries/RoundedBoxGeometry.js'),
+      ]);
+      window.THREE = THREE;
+      window.RG.RoundedBoxGeometry = RoundedBoxGeometry;
+      window.RG.startTall({ RoomEnvironment });
+    } catch (err) {
+      console.error(err);
+      const box = document.getElementById('error');
+      box.hidden = false;
+      box.textContent = 'Could not start the 3D scene (' + err.message + ').';
+    }
+  </script>
+</body>
+</html>

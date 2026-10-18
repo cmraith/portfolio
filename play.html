@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Play &ndash; Charlotte Raith</title>
+  <link rel="stylesheet" href="css/style.css">
+  <!-- the name's font, fetched straight away so the name isn't kept waiting for it -->
+  <link rel="preload" href="fonts/nunito-900-latin.woff2" as="font" type="font/woff2" crossorigin>
+</head>
+<body class="play">
+  <!-- The games, one above the other, each in its own frame filling the window; the page
+       scrolls from one to the next. First Marbie, the Tamagotchi. -->
+  <iframe class="game" src="tamagotchi/index.html" title="Marbie, a virtual pet"></iframe>
+  <!-- Then applefriend. Its page is see-through, so the yellow backdrop shows behind it and
+       the apple sits in the middle of the window. -->
+  <iframe class="game" src="applefriend/index.html" title="applefriend"></iframe>
+
+  <!-- The name, in the top left corner as on the Work page once its machine has started.
+       Here it is also the way back to that page. -->
+  <header class="title">
+    <a href="index.html"><h1>Charlotte<br>Raith</h1></a>
+  </header>
+
+  <!-- Sizes the name's two lines, exactly as on the Work page. Not deferred, so the name is
+       never shown at one size and then corrected. -->
+  <script src="js/name.js"></script>
+
+  <!-- The site navigation (menu button and panel), shared with the other pages. -->
+  <script defer src="js/menu.js"></script>
+  <!-- The pointer: reports where it is, and draws the circle cursor. Shared with the other pages. -->
+  <script defer src="js/cursor.js"></script>
+  <!-- Tilde, the mascot (js/mascot.js, its body, then js/mascot-ai.js, its mind), is switched
+       off for now: to bring it back, load those two scripts here, deferred, as the others are. -->
+
+  <!-- The games are played with the keyboard, which only reaches the frame that has the focus:
+       so the game that fills most of the window has it, the first one to start with. -->
+  <script>
+    (function () {
+      var games = Array.prototype.slice.call(document.querySelectorAll('.game'));
+      var marbie = games[0];
+      var shown = marbie;
+      function focusShown() { shown.contentWindow.focus({ preventScroll: true }); }
+      marbie.addEventListener('load', function () { if (shown === marbie) focusShown(); });
+      var watch = new IntersectionObserver(function (entries) {
+        entries.forEach(function (entry) {
+          if (entry.isIntersecting && entry.target !== shown) {
+            shown = entry.target;
+            focusShown();
+          }
+        });
+      }, { threshold: 0.6 });
+      games.forEach(function (game) { watch.observe(game); });
+
+      // Marbie's device keeps clear of the site's name and menu button, which sit over the top
+      // of its frame: its page starts just under them.
+      function clearNav() {
+        var doc = marbie.contentDocument;
+        var box = document.querySelector('.title');
+        if (!doc || !box) return;
+        doc.documentElement.style.setProperty('--site-nav-bottom', Math.ceil(box.getBoundingClientRect().bottom) + 'px');
+      }
+      marbie.addEventListener('load', clearNav);
+      window.addEventListener('resize', clearNav);
+    })();
+  </script>
+</body>
+</html>

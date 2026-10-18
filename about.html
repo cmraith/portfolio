@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>About &ndash; Charlotte Raith</title>
+  <!-- Poppins, hosted with the site (style.css), its usual letters fetched straight away -->
+  <link rel="preload" href="fonts/poppins-400-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="fonts/poppins-500-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="fonts/poppins-600-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="css/style.css">
+  <!-- the name's font, fetched straight away so the name isn't kept waiting for it -->
+  <link rel="preload" href="fonts/nunito-900-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <!-- (opened straight from a file, the browser won't load the font files from the disk, so
+       Poppins comes from Google Fonts instead, which needs an internet connection) -->
+  <script>
+    if (location.protocol === 'file:') {
+      var fonts = document.createElement('link');
+      fonts.rel = 'stylesheet';
+      fonts.href = 'https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap';
+      document.head.appendChild(fonts);
+    }
+  </script>
+  <!-- Three.js (version 0.170.0), for the hanging cards, as on the Work page: the copies
+       hosted with the site, or, opened straight from a file, the same version from a CDN. -->
+  <script>
+    (function () {
+      var local = location.protocol !== 'file:';
+      var three = local ? './vendor/three/' : 'https://cdn.jsdelivr.net/npm/three@0.170.0/';
+      var map = document.createElement('script');
+      map.type = 'importmap';
+      map.textContent = JSON.stringify({ imports: {
+        'three': three + 'build/three.module.min.js',
+        'three/addons/': three + 'examples/jsm/',
+      } });
+      document.currentScript.after(map);
+      ['build/three.module.min.js', 'examples/jsm/environments/RoomEnvironment.js',
+        'examples/jsm/geometries/RoundedBoxGeometry.js'].forEach(function (file) {
+        var link = document.createElement('link');
+        link.rel = 'modulepreload';
+        link.href = three + file;
+        if (!local) link.crossOrigin = '';
+        document.head.appendChild(link);
+      });
+    })();
+  </script>
+</head>
+<body class="about">
+  <!-- The About page, an ordinary scrolling page: first a screen with a photo on the left (on
+       a tall screen, across its top) and "About me", large and plain, beside it; then, for now,
+       a blank yellow screen. The name in the nav bar stays in its corner, as on every page.
+       See ".about" in style.css. -->
+  <main class="about-page">
+    <section class="about-screen" aria-label="About">
+      <div class="about-photo-frame">
+        <img class="about-photo" src="img/about/charlotte.webp" alt="Charlotte Raith, smiling, drawing a teal sketch on a whiteboard" width="1024" height="1024">
+      </div>
+      <div class="about-hero">
+        <!-- the heading, large, set like the name: not a link, and without the hover effect -->
+        <div class="hero-block">
+          <h2 class="hero-name" data-size-as="About me">About<br>me :-)</h2>
+          <p class="hero-text">I&rsquo;m a senior at <mark class="hero-mark">Rochester Institute of Technology</mark>, graduating in <mark class="hero-mark">May 2027</mark> with a BFA in New Media Design. I&rsquo;m passionate about <mark class="hero-mark">interaction and motion design</mark>, and I love bringing my illustration background into both to create thoughtful experiences that blend storytelling and visual design.</p>
+          <p class="hero-text">I do my best work alongside other creatives, where experimenting and having fun are part of the process. <mark class="hero-mark">I&nbsp;think good design should be invisible, but great design should be fun!</mark></p>
+        </div>
+      </div>
+      <!-- The loose pieces from the Yuki page's machine, on the board round the photo and the
+           words: each a picture of the piece and one of its shadow on the board, drawn from
+           the same 3D models in the same light (see ".board-piece" in style.css, and
+           js/about-pieces.js for the waving hand and the cube's eyes). --w and --h are each
+           picture's size, --px and --py where the piece's pivot is in it, --sx and --sy how
+           far its shadow lies from it (all in its pixels, 256 to the scene's unit). -->
+      <div class="pieces" aria-hidden="true">
+        <div class="board-piece cloud" style="--w:714;--h:451;--px:334;--py:305">
+          <img class="board-piece-shadow" src="img/about/pieces/cloud-shadow.webp" alt="" width="714" height="451">
+          <img class="board-piece-body" src="img/about/pieces/cloud.webp" alt="" width="714" height="451">
+        </div>
+        <div class="board-piece pinwheel" style="--w:635;--h:715;--px:283;--py:283;--sx:59;--sy:129">
+          <img class="board-piece-shadow" src="img/about/pieces/pinwheel-shadow.webp" alt="" width="635" height="715">
+          <img class="board-piece-body" src="img/about/pieces/pinwheel.webp" alt="" width="635" height="715">
+        </div>
+        <div class="board-piece hand" style="--w:504;--h:613;--px:175;--py:444;--sx:39;--sy:86">
+          <img class="board-piece-shadow" src="img/about/pieces/hand-shadow.webp" alt="" width="504" height="613">
+          <img class="board-piece-body" src="img/about/pieces/hand.webp" alt="" width="504" height="613">
+        </div>
+        <div class="board-piece arrow arrow-1" style="--w:204;--h:232;--px:97;--py:100">
+          <img class="board-piece-shadow" src="img/about/pieces/arrow-shadow.webp" alt="" width="204" height="232">
+          <img class="board-piece-body" src="img/about/pieces/arrow.webp" alt="" width="204" height="232">
+        </div>
+        <div class="board-piece arrow arrow-2" style="--w:204;--h:232;--px:97;--py:100">
+          <img class="board-piece-shadow" src="img/about/pieces/arrow-shadow.webp" alt="" width="204" height="232">
+          <img class="board-piece-body" src="img/about/pieces/arrow.webp" alt="" width="204" height="232">
+        </div>
+        <div class="board-piece dot-flower" style="--w:525;--h:600;--px:230;--py:230">
+          <img class="board-piece-shadow" src="img/about/pieces/dot-flower-shadow.webp" alt="" width="525" height="600">
+          <img class="board-piece-body" src="img/about/pieces/dot-flower.webp" alt="" width="525" height="600">
+        </div>
+        <div class="board-piece half-moon" style="--w:630;--h:449;--px:289;--py:289">
+          <img class="board-piece-shadow" src="img/about/pieces/half-moon-shadow.webp" alt="" width="630" height="449">
+          <img class="board-piece-body" src="img/about/pieces/half-moon.webp" alt="" width="630" height="449">
+        </div>
+        <div class="board-piece cube" style="--w:605;--h:849;--px:200;--py:200">
+          <img class="board-piece-shadow" src="img/about/pieces/cube-shadow.webp" alt="" width="605" height="849">
+          <img class="board-piece-body" src="img/about/pieces/cube.webp" alt="" width="605" height="849">
+          <!-- its pupils, each on its eye (--ex, --ey: the eye's centre from the cube's, in the
+               scene's units, up positive) -->
+          <img class="board-piece-body pupil" src="img/about/pieces/pupil.webp" alt="" width="67" height="67" style="--w:67;--h:67;--px:33;--py:33;--ex:-0.26;--ey:0.1">
+          <img class="board-piece-body pupil" src="img/about/pieces/pupil.webp" alt="" width="67" height="67" style="--w:67;--h:67;--px:33;--py:33;--ex:0.26;--ey:0.1">
+        </div>
+      </div>
+    </section>
+    <!-- The hanging cards: a 3D scene of their own (js/hanging-cards.js) over this screen, on
+         the board like the Work and Yuki pages' machines, blank for now (photos and words to
+         come). Brushing past one sets it swinging, and one can be pulled aside and let go. -->
+    <section class="about-screen cards-screen" aria-label="More about me (coming soon)">
+      <canvas class="cards-scene" aria-hidden="true"></canvas>
+    </section>
+  </main>
+
+  <!-- Cream boxes behind the name and the menu button, as on the Yuki page, keeping them clear
+       of the page scrolling under them. -->
+  <div class="nav-box name-box" aria-hidden="true"></div>
+  <div class="nav-box menu-box" aria-hidden="true"></div>
+
+  <!-- The name, in the top left corner as on the other pages; here it leads back to Work. -->
+  <header class="title">
+    <a href="index.html"><h1>Charlotte<br>Raith</h1></a>
+  </header>
+
+  <!-- Sizes the names' lines and builds the corner name's hover effect. Not deferred, so the
+       names are never shown at one size and then corrected. -->
+  <script src="js/name.js"></script>
+
+  <!-- The waving hand and the cube's eyes (the board's other pieces move by style.css alone). -->
+  <script defer src="js/about-pieces.js"></script>
+  <!-- The hanging cards' scene. Plain scripts (not modules) that only define builders on
+       window.RG; the module at the end pulls in Three.js and starts it. -->
+  <script defer src="js/materials.js"></script>
+  <script defer src="js/parts.js"></script>
+  <script defer src="js/hanging-cards.js"></script>
+  <!-- The site navigation (menu button and panel), shared with the other pages. -->
+  <script defer src="js/menu.js"></script>
+  <!-- The pointer: reports where it is, and draws the circle cursor. Shared with the other pages. -->
+  <script defer src="js/cursor.js"></script>
+  <!-- Tilde, the mascot (js/mascot.js, its body, then js/mascot-ai.js, its mind), is switched
+       off for now: to bring it back, load those two scripts here, deferred, as the others are. -->
+
+  <!-- Runs after the deferred scripts: pulls in Three.js, then sets up the hanging cards. If
+       it can't, the screen is just the board. -->
+  <script type="module">
+    try {
+      const [THREE, { RoomEnvironment }, { RoundedBoxGeometry }] = await Promise.all([
+        import('three'),
+        import('three/addons/environments/RoomEnvironment.js'),
+        import('three/addons/geometries/RoundedBoxGeometry.js'),
+      ]);
+      window.THREE = THREE;
+      window.RG.RoundedBoxGeometry = RoundedBoxGeometry;
+      window.RG.startCards({ RoomEnvironment });
+    } catch (err) {
+      console.error(err);
+    }
+  </script>
+</body>
+</html>
