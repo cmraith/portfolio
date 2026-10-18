@@ -1,0 +1,1887 @@
+/* Poppins, hosted with the site (the same files Google Fonts serves, in the same three
+   weights and the same character sets), so the page doesn't wait on another server for it. */
+@font-face {
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(../fonts/poppins-400-devanagari.woff2) format('woff2');
+  unicode-range: U+0900-097F, U+1CD0-1CF4, U+1CF7-1CF9, U+200C-200D, U+20A8, U+20B9, U+20F0, U+25CC, U+A830-A839, U+A8E0-A8FF, U+11B00-11B0A;
+}
+@font-face {
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(../fonts/poppins-400-latin-ext.woff2) format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+@font-face {
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(../fonts/poppins-400-latin.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url(../fonts/poppins-500-devanagari.woff2) format('woff2');
+  unicode-range: U+0900-097F, U+1CD0-1CF4, U+1CF7-1CF9, U+200C-200D, U+20A8, U+20B9, U+20F0, U+25CC, U+A830-A839, U+A8E0-A8FF, U+11B00-11B0A;
+}
+@font-face {
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url(../fonts/poppins-500-latin-ext.woff2) format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+@font-face {
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url(../fonts/poppins-500-latin.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url(../fonts/poppins-600-devanagari.woff2) format('woff2');
+  unicode-range: U+0900-097F, U+1CD0-1CF4, U+1CF7-1CF9, U+200C-200D, U+20A8, U+20B9, U+20F0, U+25CC, U+A830-A839, U+A8E0-A8FF, U+11B00-11B0A;
+}
+@font-face {
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url(../fonts/poppins-600-latin-ext.woff2) format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+@font-face {
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url(../fonts/poppins-600-latin.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+/* Nunito Black, the name's font (and the menu's), hosted with the site so every device shows
+   the same letters (the same files Google Fonts serves). "block": the name waits for it
+   rather than showing in another font first; each page preloads the Latin file. */
+@font-face {
+  font-family: 'Nunito';
+  font-style: normal;
+  font-weight: 900;
+  font-display: block;
+  src: url(../fonts/nunito-900-latin-ext.woff2) format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+
+@font-face {
+  font-family: 'Nunito';
+  font-style: normal;
+  font-weight: 900;
+  font-display: block;
+  src: url(../fonts/nunito-900-latin.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+:root {
+  --yellow: #f5c21b; /* the mustard of the floor and the lower half of the window */
+  --yellow-top: #f9ef67; /* lighter and slightly greener, at the top of the window */
+  /* What sits behind everything: the same gradient as the scene's backdrop (see
+     backdropGradient in js/main.js), reaching the mustard halfway down, at the horizon. */
+  --backdrop: linear-gradient(to bottom, var(--yellow-top), var(--yellow) 50%);
+  --ink: #1c2b63;
+  --title-size: clamp(18px, 2.4vw, 30px); /* the name, at its normal size in the corner */
+
+  /* The interface: white rounded cards with soft shadows, a geometric sans, near-black
+     headings over grey body text, and a teal accent with a violet badge. The name keeps its
+     own font and colour. */
+  --font-name: "Nunito", "Segoe UI", system-ui, sans-serif; /* (Nunito: hosted, at the top) */
+  --font-ui: "Poppins", "Segoe UI", system-ui, -apple-system, sans-serif;
+  --text: #15172b;
+  --muted: #8a8fa6;
+  --surface: #ffffff;
+  --soft: #f2f3f8;
+  --accent: #1fb5a3;
+  --badge: #7a3cf0;
+  --shadow: 0 24px 60px rgba(28, 43, 99, 0.2), 0 4px 14px rgba(28, 43, 99, 0.08);
+  --shadow-small: 0 8px 22px rgba(28, 43, 99, 0.16);
+
+  /* The grid. Every piece of text starts on one vertical line, --margin in from the left
+     edge: the name (large and small), the scroll hint, and the image, title and description
+     inside each container. Vertical gaps are multiples of --unit. */
+  --margin: clamp(20px, 5vw, 72px);
+  --unit: 8px;
+  --panel-inset: 20px; /* a container's padding: how far its contents sit inside it */
+
+  /* The nav bar along the top of the window (the name, the menu button and, on the Work
+     page, the progress dots) keeps this far in from the window's edges, or further where a
+     phone's screen has a notch or rounded corners there. --nav-top is how far down the name
+     starts; --nav-side, how far in from the side the name and the menu's bars sit. */
+  --nav-top: max(calc(var(--unit) * 5), env(safe-area-inset-top, 0px));
+  --nav-side: max(calc(var(--unit) * 4), env(safe-area-inset-left, 0px), env(safe-area-inset-right, 0px));
+  /* The room the name and menu button take at the top of the window. */
+  --nav: calc(var(--nav-top) + var(--unit) * 3 + var(--title-size) * var(--name-height, 1.9));
+
+  /* Where the large name on the Work page's opening screen is centred, top to bottom. */
+  --intro-middle: 50vh;
+}
+
+* { box-sizing: border-box; }
+
+html, body {
+  height: 100%;
+  margin: 0;
+  overflow: hidden;
+  background: var(--backdrop);
+  color: var(--text);
+  font-family: var(--font-ui);
+}
+
+/* The cursor: a flat white circle blended with the page by "difference", which shows every
+   colour underneath it as its opposite. js/cursor.js adds it, moves it, and sets these
+   classes; it only does so for a mouse or trackpad. */
+html.custom-cursor,
+html.custom-cursor * {
+  cursor: none !important;
+}
+
+/* The circle can't be shown over something made full screen (a video's full screen view
+   shows only the video), nor over a picture opened up on the Yuki page (its viewer sits in a
+   layer above the whole page, the circle included). There, the normal pointer comes back. */
+html.custom-cursor :fullscreen,
+html.custom-cursor :fullscreen * {
+  cursor: auto !important;
+}
+
+html.custom-cursor .viewer,
+html.custom-cursor .viewer * { cursor: zoom-out !important; } /* the picture too: a click anywhere closes it */
+html.custom-cursor .viewer video { cursor: auto !important; }
+html.custom-cursor .viewer .viewer-close,
+html.custom-cursor .viewer .viewer-close * { cursor: pointer !important; }
+
+.cursor {
+  --size: 28px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000; /* above everything, the menu included */
+  width: var(--size);
+  height: var(--size);
+  margin: calc(var(--size) / -2) 0 0 calc(var(--size) / -2); /* centred on the pointer */
+  border-radius: 50%;
+  background: #fff;
+  mix-blend-mode: difference;
+  opacity: 0; /* until the pointer first moves, and whenever it leaves the window */
+  pointer-events: none;
+  transition: opacity 0.2s ease, width 0.2s ease, height 0.2s ease, margin 0.2s ease;
+}
+
+.cursor.visible { opacity: 1; }
+.cursor.over-link { --size: 14px; } /* over something clickable: it shrinks to a point */
+.cursor.pressed { --size: 20px; }
+.cursor.over-link.pressed { --size: 10px; } /* (pressed on something clickable, smaller still) */
+
+@media (prefers-reduced-motion: reduce) {
+  .cursor { transition: none; }
+}
+
+#scene {
+  position: fixed;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  display: block;
+  touch-action: none;
+}
+
+/* The name. In its corner it sits as far in from the left edge as the menu button's bars are
+   from the right edge. */
+.title {
+  --top: var(--nav-top);
+  --left: var(--nav-side);
+  position: fixed;
+  top: var(--top);
+  left: var(--left);
+  pointer-events: none;
+  transform-origin: top left;
+  /* Drawn at --title-raster times its size and shrunk back down to it, so where the name is
+     also shown large (the Work page's opening screen, which sets --title-raster to that
+     size), it's drawn sharp there: enlarging a small one blurs it in some browsers (Safari).
+     Elsewhere --title-raster is 1, and this does nothing. */
+  transform: translate(0, 0) scale(calc(1 / var(--title-raster, 1)));
+}
+
+/* Where the name is a link (the Play page), it responds to the pointer; otherwise the name
+   lets clicks through to whatever is behind it. */
+.title a {
+  display: block;
+  color: inherit;
+  text-decoration: none;
+  pointer-events: auto;
+}
+
+.title a:focus-visible { outline: 2px solid var(--ink); outline-offset: 6px; border-radius: 6px; }
+
+/* Only the moves out of and back into the intro are animated; main.js adds this class for
+   them. Otherwise the name must snap straight to its place (on load, and if the window is
+   resized), not drift there. */
+.title.gliding {
+  transition: transform 1.3s cubic-bezier(0.65, 0, 0.2, 1);
+}
+
+/* First load: the name sits large at the left-middle of the screen. It is the same element
+   scaled up from its top left corner, and moved down and across onto the grid line, so it
+   can glide to its corner once the machine starts. index.html
+   sets --intro-scale; main.js removes the class, and restores it on a full rewind. */
+body.intro .title {
+  transform:
+    translate(
+      calc(var(--margin) - var(--left)),
+      /* centred: js/name.js sets --name-height, the name's height in multiples of its size */
+      calc(var(--intro-middle) - var(--top) - var(--intro-scale, 3) * var(--title-size) * var(--name-height, 1.9) / 2)
+    )
+    scale(calc(var(--intro-scale, 3) / var(--title-raster, 1)));
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .title.gliding { transition: none; }
+}
+
+/* Opening screen only, just under the large name: a subtitle, then a small, widely spaced
+   prompt. */
+.intro-copy {
+  position: fixed;
+  top: calc(var(--intro-middle) + var(--intro-scale, 3) * var(--title-size) * var(--name-height, 1.9) / 2 + var(--unit) * 2);
+  left: var(--margin);
+  width: calc(100vw - 2 * var(--margin));
+  color: var(--ink);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+}
+
+body.intro .intro-copy {
+  opacity: 1;
+  transition: opacity 0.6s ease 0.9s; /* on a full rewind, wait for the name to settle first */
+}
+
+.intro-subtitle {
+  margin: 0 0 calc(var(--unit) * 3);
+  font-size: clamp(18px, 1.75vw, 26px);
+  font-weight: 600;
+  line-height: 1.3;
+  text-wrap: balance; /* (if it wraps, on a narrow phone: two even lines) */
+}
+
+.scroll-hint {
+  margin: 0;
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  opacity: 0.85;
+}
+
+.scroll-hint span {
+  display: inline-block;
+  animation: nudge 1.6s ease-in-out infinite;
+}
+
+@keyframes nudge {
+  50% { transform: translateY(4px); }
+}
+
+/* Clicking a progress dot cuts straight to that stop, so nothing on the page may ease into
+   place. main.js sets this class for the instant the jump lands. */
+body.snapping .title,
+body.snapping .intro-copy,
+body.snapping .panel {
+  transition: none !important;
+}
+
+/* Progress dots along the top edge: one per stop, each a button that jumps the machine there,
+   with a previous and a next arrow either side that jump to the stop before or after (so
+   it's plain the machine's runs can be skipped). --row is the row's height. */
+.dots {
+  --row: 36px;
+  --dot: 32px; /* each dot's button */
+  position: fixed;
+  top: calc(var(--nav-top) - var(--row) / 2); /* level with the menu button (its middle on the button's) */
+  left: 50%;
+  display: flex;
+  align-items: center;
+  gap: 2px;
+  transform: translateX(-50%);
+  /* (hidden on the opening screen until the visitor first scrolls: js/main.js marks the page
+     .dots-shown then, and they fade in) */
+  visibility: hidden;
+  opacity: 0;
+  transition: opacity 0.5s ease, visibility 0s 0.5s;
+}
+
+body.dots-shown .dots {
+  visibility: visible;
+  opacity: 1;
+  transition: opacity 0.5s ease 0.3s, visibility 0s;
+}
+
+.dots .dot {
+  display: grid;
+  place-items: center;
+  width: var(--dot);
+  height: var(--dot);
+  padding: 0;
+  border: 0;
+  border-radius: 50%;
+  background: none;
+  cursor: pointer;
+}
+
+.dots .dot::before {
+  content: "";
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: var(--ink);
+  opacity: 0.3;
+  transition: opacity 0.2s ease, transform 0.2s ease, background 0.2s ease, box-shadow 0.2s ease;
+}
+
+.dots .dot:hover::before { opacity: 0.65; transform: scale(1.15); }
+
+/* The current stop: an accent dot with an ink ring (outlined, like the arrows). */
+.dots .dot[aria-current="step"]::before {
+  background: var(--accent);
+  box-shadow: 0 0 0 2px var(--ink);
+  opacity: 1;
+  transform: scale(1.35);
+}
+
+.dots .dot:focus-visible { outline: 2px solid var(--ink); outline-offset: -2px; }
+
+/* The first dot, the landing page (the opening view, before the machine starts): larger, and
+   solid orange, so it reads as home. As the current stop it takes the same ink ring as the
+   others, and stays orange. */
+.dots .dot.home::before {
+  width: 15px;
+  height: 15px;
+  background: #ff6b1c;
+  opacity: 1;
+}
+
+.dots .dot.home:hover::before { opacity: 0.8; }
+
+.dots .dot.home[aria-current="step"]::before { background: #ff6b1c; opacity: 1; }
+
+/* The previous and next arrows: just an ink chevron each, a little way out from the dots.
+   Pointed at, they turn the highlight pink and grow a touch; with nowhere to go (at the first
+   stop or the last), they fade and don't respond. */
+.dots .step-arrow {
+  display: grid;
+  place-items: center;
+  box-sizing: border-box;
+  width: var(--row);
+  height: var(--row);
+  margin: 0 6px;
+  padding: 0;
+  border: 0;
+  border-radius: 50%;
+  background: none;
+  color: var(--ink);
+  cursor: pointer;
+  transition: transform 0.2s ease, color 0.2s ease, opacity 0.2s ease;
+}
+
+.dots .step-arrow svg {
+  width: 75%;
+  height: 75%;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 2.6;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.dots .step-arrow:hover { color: #ff4f8a; transform: scale(1.08); }
+.dots .step-arrow:focus-visible { outline: 2px solid var(--ink); outline-offset: 2px; }
+.dots .step-arrow:disabled { opacity: 0.3; cursor: default; color: var(--ink); transform: none; }
+
+/* On a narrow screen the row is a little smaller, to fit between the window's edges and clear
+   of the menu button (the name sits under it: see ".title" further on). */
+@media (max-width: 640px) {
+  .dots { --row: 30px; --dot: 20px; gap: 1px; }
+  .dots .dot::before { width: 8px; height: 8px; }
+  .dots .dot.home::before { width: 12px; height: 12px; }
+  .dots .step-arrow { margin: 0 2px; }
+}
+
+/* (the narrowest phones: the row from the left edge, not centred, clear of the menu button) */
+@media (max-width: 360px) {
+  .dots { left: 12px; transform: none; }
+}
+
+
+@media (prefers-reduced-motion: reduce) {
+  .scroll-hint span { animation: none; }
+}
+
+/* Site navigation: a menu button in the top right corner of the window, on the dots' row:
+   three fine bars with nothing behind them, as far in from the right edge as the name is from
+   the left (the bars are 11px in from the button's own edge). */
+.menu-button {
+  position: fixed;
+  top: calc(var(--nav-top) - var(--unit) * 2.5);
+  right: calc(var(--nav-side) - 11px);
+  display: grid;
+  align-content: center;
+  justify-items: center;
+  gap: 4px;
+  width: 40px;
+  height: 40px; /* centred on the dots' centre line */
+  padding: 0;
+  border: 0;
+  z-index: 11; /* stays above the panel it opens, as the way to close it */
+  border-radius: 14px;
+  background: none;
+  cursor: pointer;
+}
+
+.menu-button span {
+  width: 18px;
+  height: 2px;
+  border-radius: 2px;
+  background: var(--ink);
+  transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+.menu-button:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+
+/* Open: the bars fold into a cross. */
+.menu-button[aria-expanded="true"] span:nth-child(1) { transform: translateY(6px) rotate(45deg); }
+.menu-button[aria-expanded="true"] span:nth-child(2) { opacity: 0; }
+.menu-button[aria-expanded="true"] span:nth-child(3) { transform: translateY(-6px) rotate(-45deg); }
+
+/* What it opens: a yellow panel the full height of the window, sliding in from the right. */
+.menu {
+  position: fixed;
+  --roll: #ff4f8a; /* the highlight: the colour words roll over to and icons turn on hover */
+  top: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 10;
+  display: flex;
+  flex-direction: column;
+  gap: calc(var(--unit) * 2);
+  width: min(100vw, clamp(280px, 34vw, 460px));
+  padding: calc(var(--unit) * 12) calc(var(--unit) * 5) calc(var(--unit) * 5);
+  background: var(--backdrop);
+  box-shadow: -24px 0 60px rgba(28, 43, 99, 0.18); /* lifts it off the yellow backdrop behind */
+  visibility: hidden; /* also keeps the links out of reach of the keyboard while closed */
+  transform: translateX(100%);
+  transition: transform 0.35s cubic-bezier(0.6, 0, 0.2, 1), visibility 0s 0.35s;
+}
+
+.menu.open {
+  visibility: visible;
+  transform: none;
+  transition: transform 0.35s cubic-bezier(0.2, 0.7, 0.2, 1);
+}
+
+.menu a {
+  color: var(--ink);
+  text-decoration: none;
+  white-space: nowrap;
+  transition: color 0.15s ease, background 0.15s ease;
+}
+
+/* The words: set like the name (same font, weight, capitals and tight spacing).
+
+   On hover each word rolls over, letter by letter from the left: every letter slides up out
+   of the line while a copy in the highlight colour rises into its place from below, landing
+   with a small bounce. js/menu.js wraps each letter in a .letter and numbers it (--i). The
+   copy is the letter's own shadow, parked one line down where the link clips it from view. */
+.menu > a {
+  display: flex;
+  align-self: flex-start; /* only as wide as the word, so only the word responds */
+  overflow: hidden;
+  font-family: var(--font-name);
+  font-size: clamp(34px, 4.2vw, 56px);
+  font-weight: 900;
+  line-height: 0.95;
+  letter-spacing: -0.02em;
+  text-transform: uppercase;
+}
+
+.menu > a .letter {
+  white-space: pre; /* keeps the space between words */
+  text-shadow: 0 1em 0 var(--roll);
+  transition: transform 0.45s cubic-bezier(0.34, 1.45, 0.64, 1);
+  transition-delay: calc(var(--i) * 28ms);
+}
+
+/* The page you are on stays rolled over, in the highlight colour. */
+.menu > a[aria-current="page"] .letter,
+.menu > a:hover .letter,
+.menu > a:focus-visible .letter {
+  transform: translateY(-1em);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .menu > a .letter { transition: none; }
+}
+
+.menu a:focus-visible { outline: 2px solid var(--ink); outline-offset: 4px; border-radius: 6px; }
+
+/* Under Work, its projects: a small list, close under the word, a little in from it. Those
+   with a process page link to it (turning the highlight colour when pointed at, and staying
+   it on that page); the rest, not linked yet, are a little faded. */
+.menu-sub {
+  display: flex;
+  flex-direction: column;
+  gap: calc(var(--unit) * 0.75);
+  margin: calc(var(--unit) * -0.5) 0 0;
+  padding: 0 0 0 4px;
+  list-style: none;
+  font-family: var(--font-ui);
+  /* as large as the panel allows: its longest title, "Digital Etch-a-Sketch", about 11 times
+     the size wide, just filling the panel's width ("width" in ".menu", less its padding) */
+  font-size: calc((min(100vw, clamp(280px, 34vw, 460px)) - 84px) / 11.2);
+  font-weight: 600;
+  line-height: 1.3;
+  color: var(--ink);
+}
+
+.menu-sub span { opacity: 0.5; }
+.menu-sub a:hover,
+.menu-sub a:focus-visible,
+.menu-sub a[aria-current="page"] { color: var(--roll); }
+
+/* The icons: round buttons at the foot of the panel. */
+.menu .social {
+  display: flex;
+  gap: var(--unit);
+  margin-top: auto;
+}
+
+.menu .icon {
+  display: grid;
+  flex: none;
+  place-items: center;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: rgba(28, 43, 99, 0.1);
+}
+
+/* The circle turns the highlight colour and the icon turns the panel's own yellow, so it
+   reads as cut out of the circle. */
+.menu .icon:hover,
+.menu .icon:focus-visible {
+  background: var(--roll);
+  color: var(--yellow);
+}
+
+.menu svg { width: 20px; height: 20px; }
+
+@media (prefers-reduced-motion: reduce) {
+  .menu, .menu.open, .menu-button span { transition: none; }
+}
+
+
+
+
+.title h1 {
+  margin: 0;
+  color: var(--ink);
+  font-family: var(--font-name);
+  font-size: calc(var(--title-size) * var(--title-raster, 1)); /* (see .title) */
+  line-height: 0.8; /* its two lines close together (js/name.js reads this) */
+  font-weight: 900;
+  letter-spacing: -0.02em;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+/* The name's hover effect, wherever the name is: every letter is cut into quarters,
+   and the quarters near the pointer turn into tiles of geometric shapes. js/name.js marks
+   those quarters .on (with --far, 0 at the pointer to 1 at the edge of its reach), and gives
+   every letter a cell (.ch) the width of the letter (--w), holding:
+     .sizer     an invisible copy of the letter that gives the cell its size
+     .quarter   one per piece, placed by --col and --row in a grid of --columns by --rows
+                over the capitals' height (--cap-top, --cap-height)
+       .piece   that quarter's copy of the letter, laid exactly over the cell and clipped
+       .tile    the shapes that replace it */
+.title h1 { user-select: none; }
+
+/* Each line of the name is its own block. js/name.js sets its size, and pulls it left by the
+   small gap a big letter leaves inside its own box, so the letters sit on the grid line. */
+.title h1 .line {
+  display: block;
+}
+
+.title h1 .ch {
+  position: relative;
+  display: inline-flex;
+  justify-content: center;
+  width: var(--w);
+  letter-spacing: 0; /* already counted in --w */
+}
+
+.title h1 .sizer { visibility: hidden; }
+
+.title h1 .quarter {
+  --top: calc(var(--cap-top) + var(--row) * var(--cap-height) / var(--rows));
+  position: absolute;
+  top: var(--top);
+  left: calc(var(--col) * 100% / var(--columns));
+  width: calc(100% / var(--columns));
+  height: calc(var(--cap-height) / var(--rows));
+}
+
+/* Undo the quarter's own offset and size so the letter lands where the whole letter was. */
+.title h1 .piece {
+  position: absolute;
+  top: calc(var(--top) * -1);
+  left: calc(var(--col) * -100%);
+  display: flex;
+  justify-content: center;
+  width: calc(var(--columns) * 100%);
+  /* shrink towards the middle of its own quarter */
+  transform-origin: calc((var(--col) + 0.5) * 100% / var(--columns)) calc(var(--top) + var(--cap-height) / var(--rows) / 2);
+  transition: opacity 0.1s ease, transform 0.18s cubic-bezier(0.6, 0, 0.2, 1);
+  transition-delay: calc(var(--far, 0) * 50ms); /* the change spreads out from the pointer */
+}
+
+.title h1 .tile {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: calc(100% + 0.5px); /* the sliver of overlap hides hairline gaps between tiles */
+  height: calc(100% + 0.5px);
+  color: var(--ink);
+  background: #fff;
+  opacity: 0;
+  transform: scale(0.2) rotate(-90deg);
+  transition: opacity 0.1s ease, transform 0.22s cubic-bezier(0.3, 1.3, 0.5, 1);
+  transition-delay: calc(var(--far, 0) * 50ms);
+}
+
+.title h1 .quarter.on .piece {
+  opacity: 0;
+  transform: scale(0.5);
+}
+
+.title h1 .quarter.on .tile {
+  opacity: 1;
+  transform: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .title h1 .piece, .title h1 .tile { transition: none; }
+}
+
+
+/* The open part of the window beside the ball when it stops. main.js sets its width. */
+.panels {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  width: 72%;
+  pointer-events: none;
+}
+
+/* A white card holding an image with its step number, a title and a description. It is 4:3,
+   sized to clear the name, centred vertically, and set so that its contents, not its edge,
+   start on the grid line. */
+.panel {
+  position: absolute;
+  top: 50%;
+  left: calc(var(--margin) - var(--panel-inset));
+  /* As wide as the space allows, but never so tall that it reaches the name in the corner:
+     above and below, it leaves the name's height plus the gaps around it. */
+  width: min(84%, calc((100vh - 2 * (var(--nav-top) + var(--unit) * 2 + var(--title-size) * var(--name-height, 1.9))) * 4 / 3));
+  aspect-ratio: 4 / 3;
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+  padding: var(--panel-inset);
+  border-radius: 28px;
+  background: var(--surface);
+  box-shadow: var(--shadow);
+  opacity: 0;
+  visibility: hidden;
+  transform: translate(-48px, -50%);
+  transition: opacity 0.35s ease, transform 0.35s ease, visibility 0s 0.35s;
+}
+
+/* Arrives a beat after the camera starts sliding aside, moving the same way. */
+.panel.show {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto; /* so a video's controls can be used */
+  transform: translate(0, -50%);
+  transition: opacity 0.6s ease 0.35s, transform 0.8s cubic-bezier(0.2, 0.7, 0.2, 1) 0.35s, visibility 0s 0.35s;
+}
+
+/* The image or video takes whatever height the text below leaves, so the card keeps its size. */
+.panel img,
+.panel video {
+  display: block;
+  flex: 1;
+  width: 100%;
+  min-height: 0;
+  border-radius: 18px;
+  object-fit: cover;
+}
+
+/* A video is shown whole, never cropped; any space left beside it is a soft grey. */
+.panel video {
+  background: var(--soft);
+  object-fit: contain;
+}
+
+/* Under a video the badge sits just below it instead of half over its bottom edge, where it
+   would cover the player's pause button. */
+.panel:has(video)::before { margin-top: var(--unit); }
+
+/* The step number, in a round badge that sits half over the bottom edge of the image. The
+   stylesheet writes it from data-step, so the markup of the cards stays identical. */
+.panel::before {
+  content: "0" attr(data-step);
+  order: 1;
+  display: grid;
+  place-items: center;
+  align-self: flex-start;
+  width: 48px;
+  height: 48px;
+  margin: -24px 0 0 calc(var(--unit) * 2);
+  border: 4px solid var(--surface);
+  border-radius: 50%;
+  background: var(--badge);
+  color: var(--surface);
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.panel h2 {
+  order: 2;
+  margin: var(--unit) 0 0;
+  font-size: clamp(18px, 2.1vw, 30px);
+  line-height: 1.2;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+}
+
+.panel p {
+  order: 3;
+  display: -webkit-box;
+  margin: calc(var(--unit) / 2) 0 0;
+  overflow: hidden;
+  color: var(--muted);
+  font-size: clamp(12px, 1.05vw, 14px);
+  font-weight: 400;
+  line-height: 1.7;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  line-clamp: 2;
+}
+
+/* On a card with a sticker, the description stops short of it rather than running under it. */
+.panel:has(.sticker) p { max-width: 72%; }
+
+/* A row of tags, in place of a description: small soft pills. */
+.panel .tags {
+  order: 3;
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--unit);
+  margin: var(--unit) 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.panel .tags li {
+  padding: 4px 12px;
+  border-radius: 999px;
+  background: var(--soft);
+  color: var(--text);
+  font-size: clamp(11px, 1vw, 13px);
+  font-weight: 500;
+  line-height: 1.5;
+  white-space: nowrap;
+}
+
+/* A sticker in the spare bottom right corner of a card: a hot pink speech bubble with a white
+   die-cut edge and two yellow asterisks flying off it, stuck on at a slight angle and hanging
+   a little way over the card's right edge. */
+.panel .sticker {
+  position: absolute;
+  /* Where its top left corner sits, and its width, as percentages of the card. */
+  left: 78%;
+  top: 65%;
+  width: 29%;
+  filter: drop-shadow(0 3px 5px rgba(28, 43, 99, 0.22));
+  transform: rotate(-10deg);
+  transition: transform 0.3s cubic-bezier(0.3, 1.7, 0.5, 1); /* overshoots a touch, like a squeeze */
+}
+
+/* Hovered, it grows and swings a little nearer to level (and the mascot comes over: see
+   js/mascot-ai.js). */
+.panel .sticker:hover,
+.panel .sticker:focus-visible { transform: rotate(-2deg) scale(1.18); outline: none; }
+
+.panel .sticker svg {
+  display: block;
+  width: 100%;
+  overflow: visible;
+}
+
+/* the white edge round the bubble and the asterisks: the same shapes, drawn thicker, under them */
+.panel .sticker .edge {
+  fill: var(--surface);
+  stroke: var(--surface);
+  stroke-width: 16;
+  stroke-linejoin: round;
+}
+
+.panel .sticker .spark-edge {
+  fill: none;
+  stroke: var(--surface);
+  stroke-width: 16;
+  stroke-linecap: round;
+}
+
+.panel .sticker .bubble { fill: #ff4f8a; }
+
+.panel .sticker .spark {
+  fill: none;
+  stroke: #ffd84d;
+  stroke-width: 7;
+  stroke-linecap: round;
+}
+
+/* The words inside the bubble, on two lines. */
+.panel .sticker text {
+  fill: var(--surface);
+  font-size: 34px;
+  font-weight: 700;
+  letter-spacing: 0.01em;
+  text-anchor: middle;
+  dominant-baseline: central;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .panel, .panel.show, .panel .sticker { transition: none; }
+}
+
+
+/* ---------------------------------------------------------------- tall screens
+
+   A phone, or a tablet held upright, has no room beside the ball for a container, so the
+   Work page turns: the large opening name moves up into the top third with the whole
+   machine framed below it, and at each stop the container runs along the bottom of the
+   window with the ball resting above it (js/main.js frames the camera to match, on the
+   same test). The container's picture keeps its own shape instead of filling a fixed card. */
+@media (max-aspect-ratio: 9/10) {
+  :root { --intro-middle: 30vh; }
+
+  .panels { width: 100%; }
+
+  .panel {
+    top: auto;
+    bottom: calc(var(--unit) * 3);
+    width: min(calc(100% - 2 * var(--margin) + 2 * var(--panel-inset)), 620px);
+    aspect-ratio: auto;
+    transform: translateY(48px);
+  }
+
+  .panel.show { transform: none; }
+
+  /* The card is as wide as the screen, so the sticker sits inside its right edge, level with
+     the step badge, rather than hanging off it. */
+  .panel .sticker { left: 58%; top: auto; bottom: 30%; width: 36%; }
+
+  .panel img,
+  .panel video {
+    flex: none;
+    height: auto;
+    aspect-ratio: 16 / 9;
+    max-height: 34vh;
+  }
+}
+
+/* ---------------------------------------------------------------- short screens
+
+   A phone on its side is wide but very short, too short for a card with its picture above
+   its words. There the container sits just under the name in the corner and turns on its
+   side: the picture on the left, the badge, title, words and tags on the right. */
+@media (max-height: 540px) and (min-aspect-ratio: 9/10) {
+  .panel {
+    top: calc(var(--nav-top) + var(--title-size) * var(--name-height, 1.9) + var(--unit) * 2);
+    display: grid;
+    grid-template-columns: 56% 1fr;
+    align-content: start;
+    column-gap: calc(var(--unit) * 2);
+    width: min(64vw, 680px);
+    aspect-ratio: auto;
+    transform: translateX(-48px);
+  }
+
+  .panel.show { transform: none; }
+
+  .panel img,
+  .panel video {
+    grid-column: 1;
+    grid-row: 1 / span 4;
+    align-self: start;
+    height: auto;
+    aspect-ratio: 16 / 9;
+  }
+
+  .panel::before,
+  .panel:has(video)::before {
+    grid-column: 2;
+    margin: 0;
+  }
+
+  .panel h2,
+  .panel p,
+  .panel .tags { grid-column: 2; }
+
+  .panel:has(.sticker) p { max-width: none; }
+
+  /* the opening name a little above the middle, so the subtitle and the prompt fit under it */
+  :root { --intro-middle: 42vh; }
+  .intro-subtitle { margin-bottom: calc(var(--unit) * 1.5); }
+
+  /* the sticker, under the picture */
+  .panel .sticker { left: 4%; top: auto; bottom: -3%; width: 30%; }
+}
+
+/* A video that fills the window edge to edge, cropped to fit, behind the name, the menu and
+   the mascot (the Yuki process page). .stage is its frame, which also holds its buttons. */
+.stage {
+  position: fixed;
+  inset: 0;
+}
+
+.bleed {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* On a tall screen, filling it would cut away most of the picture, so it is shown whole
+   instead, across the middle of the screen. */
+@media (max-aspect-ratio: 9/10) {
+  .bleed { object-fit: contain; }
+}
+
+/* Its two controls, play/pause and sound, as round buttons in the bottom right corner. Each
+   holds two icons and shows the one for its current state (js adds .off). */
+.player {
+  position: absolute;
+  right: calc(var(--unit) * 3);
+  bottom: calc(var(--unit) * 3);
+  display: flex;
+  gap: var(--unit);
+}
+
+.player button {
+  display: grid;
+  place-items: center;
+  width: 48px;
+  height: 48px;
+  padding: 0;
+  border: 0;
+  border-radius: 50%;
+  background: var(--surface);
+  box-shadow: var(--shadow-small);
+  color: var(--ink);
+  cursor: pointer;
+  transition: background 0.2s ease, color 0.2s ease, transform 0.2s ease;
+}
+
+.player button:hover,
+.player button:focus-visible { background: #ff4f8a; color: var(--yellow); outline: none; transform: scale(1.08); }
+
+.player svg { width: 22px; height: 22px; fill: currentColor; }
+.player svg .line { fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; }
+.player .when-off, .player .off .when-on { display: none; }
+.player .off .when-off { display: block; }
+
+/* The project's name, large, in the video's bottom left corner: set like the site's own name
+   (same font, weight, capitals and tight spacing), in white with a soft shadow so it reads
+   over whatever the video is showing, and lined up with the name in the top left corner. */
+.stage-title {
+  position: absolute;
+  left: calc(var(--unit) * 2.5);
+  bottom: calc(var(--unit) * 2);
+  margin: 0;
+  color: var(--surface);
+  font-family: var(--font-name);
+  font-size: clamp(64px, 13vw, 220px);
+  font-weight: 900;
+  line-height: 0.8;
+  letter-spacing: -0.02em;
+  text-transform: uppercase;
+  text-shadow: 0 4px 24px rgba(28, 43, 99, 0.35);
+  pointer-events: none;
+}
+
+/* On a tall screen the video is a band across the middle, and the name sits on the yellow
+   below it, so there it is in the site's dark blue. */
+@media (max-aspect-ratio: 9/10) {
+  .stage-title { color: var(--ink); text-shadow: none; }
+}
+
+/* On a narrow screen the scroll hint is in that corner too, so the name sits just above it. */
+@media (max-width: 480px) {
+  .stage-title { bottom: calc(var(--unit) * 3 + 48px + var(--unit) * 2); }
+}
+
+/* The hint to scroll, at the middle of the video's bottom edge, level with its buttons: the
+   Work page's hint (same lettering, same nudging arrow) on a white pill, so it reads over
+   whatever the video is showing. */
+.stage-hint {
+  position: absolute;
+  bottom: calc(var(--unit) * 3);
+  left: 50%;
+  display: flex;
+  align-items: center;
+  gap: var(--unit);
+  height: 48px;
+  margin: 0;
+  padding: 0 22px 0 26px;
+  border-radius: 999px;
+  background: var(--surface);
+  box-shadow: var(--shadow-small);
+  color: var(--ink);
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  white-space: nowrap;
+  transform: translateX(-50%);
+  pointer-events: none;
+}
+
+.stage-hint span {
+  display: inline-block;
+  letter-spacing: 0;
+  animation: nudge 1.6s ease-in-out infinite;
+}
+
+/* On a narrow screen there isn't room for it in the middle beside the buttons, so it moves
+   to the left-hand corner. */
+@media (max-width: 480px) {
+  .stage-hint { left: calc(var(--unit) * 3); transform: none; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .stage-hint span { animation: none; }
+}
+
+/* The Yuki page's two layers: the video, and the machine with its cards (.machine-screen).
+   They sit one behind the other in depth, and the first scroll down moves the view from the
+   video to the machine like a camera pulling focus. js/tall-main.js marks the video "back"
+   and the machine "front" while the other is in view:
+     back    sunk a long way from the viewer: small, blurred, and (only once it is far off)
+             faded out
+     front   waiting close up: large, blurred and unseen
+   --change is how long the move takes. */
+.screen {
+  --change: 0.6s;
+  transition:
+    transform var(--change) cubic-bezier(0.65, 0, 0.2, 1),
+    filter var(--change) cubic-bezier(0.65, 0, 0.2, 1),
+    opacity calc(var(--change) * 0.4) ease, /* arriving: seen straight away, still far off */
+    visibility 0s;
+}
+
+.screen.back,
+.screen.front {
+  visibility: hidden;
+  opacity: 0;
+  filter: blur(18px);
+  pointer-events: none;
+  /* leaving: fades only over the last part of the move, and is hidden once it has finished */
+  transition-delay: 0s, 0s, calc(var(--change) * 0.6), var(--change);
+}
+
+.screen.back { transform: scale(0.3); }
+.screen.front { transform: scale(1.5); }
+
+@media (prefers-reduced-motion: reduce) {
+  .screen { transition: none; }
+}
+
+/* A video's play badge: a small square tile in the middle of its first frame, pink with
+   an ink triangle, turning cream when the animatic is pointed at. */
+.play-badge {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  display: grid;
+  place-items: center;
+  width: clamp(52px, 6vw, 76px);
+  aspect-ratio: 1;
+  background: var(--pink);
+  color: var(--ink);
+  box-shadow: var(--shadow-small);
+  transform: translate(-50%, -50%);
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+/* A picture opened up: shown whole in the middle of the window, as large as fits, on white
+   (so a drawing with a see-through ground still shows), over a dark ink veil that fades in.
+   The close button is a small square tile in the top right corner. */
+.viewer {
+  width: 100vw;
+  height: 100vh;
+  max-width: none;
+  max-height: none;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  overflow: hidden;
+  cursor: zoom-out;
+}
+
+.viewer[open] {
+  display: grid;
+  place-items: center;
+}
+
+.viewer::backdrop {
+  background: rgba(28, 43, 99, 0.9);
+  transition: background 0.35s ease;
+}
+
+@starting-style {
+  .viewer[open]::backdrop { background: rgba(28, 43, 99, 0); }
+}
+
+.viewer.leaving::backdrop { background: rgba(28, 43, 99, 0); }
+
+.viewer img,
+.viewer video {
+  display: block;
+  width: auto;
+  height: auto;
+  max-width: min(92vw, 1600px);
+  max-height: 86vh;
+  background: #fff;
+  box-shadow: 0 30px 80px rgba(0, 0, 0, 0.35);
+}
+
+.viewer [hidden] { display: none; }
+
+.viewer-close {
+  position: fixed;
+  top: calc(var(--unit) * 2);
+  right: calc(var(--unit) * 2);
+  display: grid;
+  place-items: center;
+  width: 52px;
+  height: 52px;
+  padding: 0;
+  border: 0;
+  background: #ff9dbb;
+  color: #1c2b63;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.viewer-close:hover,
+.viewer-close:focus-visible { background: #f6f0e1; outline: none; }
+
+.viewer-close svg { width: 22px; height: 22px; fill: none; stroke: currentColor; stroke-width: 2.6; stroke-linecap: round; }
+
+@media (prefers-reduced-motion: reduce) {
+  .viewer::backdrop { transition: none; }
+}
+
+/* The Play page: its games, one above the other, each filling the window in its own frame.
+   The page scrolls between them, settling on one at a time. applefriend's frame is
+   see-through, so the page's backdrop shows behind it and the apple sits in the middle. */
+html:has(body.play) {
+  overflow-x: hidden;
+  overflow-y: auto;
+  scroll-snap-type: y mandatory;
+}
+
+body.play {
+  height: auto;
+  overflow: visible;
+}
+.game {
+  display: block;
+  width: 100%;
+  height: 100vh;
+  height: 100dvh;
+  scroll-snap-align: start;
+  border: 0;
+}
+
+/* The mascot: a flat snake, drawn by js/mascot.js on a see-through sheet the size of the
+   window, so it can roam anywhere. It lets the pointer through to whatever is under it. */
+.mascot {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 5; /* over the page, under the menu panel */
+  /* js/mascot.js sizes it to just the patch the snake is in, and moves it there */
+  will-change: transform;
+  pointer-events: none;
+  /* a soft shadow under the whole snake, like the one under the cards */
+  filter: drop-shadow(0 8px 12px rgba(28, 43, 99, 0.28));
+}
+
+/* The little thought bubble over its head; js/mascot-ai.js sizes and places it. */
+.mascot-sign {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 5;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.15s ease;
+  will-change: transform;
+}
+
+.mascot-sign.show { opacity: 1; }
+
+#error {
+  position: fixed;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  margin: 0;
+  padding: 40px;
+  text-align: center;
+  color: var(--ink);
+  font-weight: 500;
+  background: var(--yellow);
+}
+
+#error[hidden] { display: none; }
+
+@media (max-width: 640px) {
+  .title { --top: calc(var(--unit) * 6); } /* below the dots, which span most of a narrow screen */
+  body:has(.dots) .title { --top: calc(var(--unit) * 8); } /* (and, where they are, their arrows) */
+}
+
+/* ---------------------------------------------------------------- the About page
+
+   An ordinary scrolling page, the window itself scrolling (on the other pages it never
+   does), one screen tall per section, over a pegboard. First a
+   photo down the left side, within the page's margins and below the nav bar, and the name
+   beside it, large and plain (on a tall screen, the photo across the top and the name under
+   it); then, for now, a blank yellow screen. */
+html:has(body.about) {
+  height: auto;
+  overflow-y: auto;
+  /* A pegboard, like the Yuki page's board (its cream and holes as they show lit in the
+     scene, and about as far apart): rows of small round holes scrolling with the page. */
+  --peg-gap: max(18px, 2.9vw);
+  --peg-hole: calc(var(--peg-gap) * 0.085);
+  background:
+    radial-gradient(circle, #cabb9b var(--peg-hole), transparent calc(var(--peg-hole) + 0.75px))
+      0 0 / var(--peg-gap) var(--peg-gap),
+    #ebdfc6;
+}
+
+/* the cream boxes behind the name and the menu button, as on the Yuki page, fixed with them
+   while the page scrolls under */
+body.about .nav-box { position: fixed; }
+
+/* The board quiet (its holes faded out to plain cream) behind the words, so they read
+   clearly, as under the Yuki page's cards: plain over each heading and paragraph and a little
+   way round it (as on that page, about 0.6 of the holes' spacing), then fading back to holes
+   over about the spacing again. */
+.hero-name,
+.hero-text { position: relative; }
+
+.hero-name::before,
+.hero-text::before {
+  --fade: calc(var(--peg-gap) * 1.1);
+  content: "";
+  position: absolute;
+  z-index: -1;
+  inset: calc(var(--peg-gap) * -1.7);
+  background: #ebdfc6;
+  pointer-events: none;
+  -webkit-mask:
+    linear-gradient(to right, transparent, #000 var(--fade), #000 calc(100% - var(--fade)), transparent),
+    linear-gradient(to bottom, transparent, #000 var(--fade), #000 calc(100% - var(--fade)), transparent);
+  -webkit-mask-composite: source-in;
+  mask:
+    linear-gradient(to right, transparent, #000 var(--fade), #000 calc(100% - var(--fade)), transparent),
+    linear-gradient(to bottom, transparent, #000 var(--fade), #000 calc(100% - var(--fade)), transparent);
+  mask-composite: intersect;
+}
+
+/* The loose pieces from the Yuki page's machine, on the board round the photo and the words.
+   Each is a picture of the piece over one of its shadow, drawn from the same 3D models in the
+   same light, and sized as on that page (a scene unit, --u, is 2.5 of the holes' spacing).
+   The shadow darkens whatever is under it (the board and its holes, or the photo), as a real
+   one would. Each piece is placed by its pivot (see about.html), its pictures drawn round it. */
+.about-screen:first-child { position: relative; }
+
+.pieces {
+  --u: calc(var(--peg-gap) * 2.5);
+  --k: calc(var(--u) / 256); /* (the pictures have 256 pixels to the unit) */
+  /* the photo (as laid out, before it is turned) and the words' column */
+  --photo-x0: var(--margin);
+  --photo-x1: calc(var(--margin) + var(--photo-width));
+  --photo-y0: var(--nav);
+  --photo-y1: calc(100vh - var(--margin));
+  --photo-h: calc(100vh - var(--nav) - var(--margin));
+  --words-x0: calc(var(--margin) * 2 + var(--photo-width));
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  overflow-x: clip; /* (their pictures' clear margins never widen the page) */
+}
+
+.pieces .board-piece {
+  position: absolute;
+  width: 0;
+  height: 0;
+}
+
+.pieces .board-piece img {
+  position: absolute;
+  left: calc(var(--px) * var(--k) * -1);
+  top: calc(var(--py) * var(--k) * -1);
+  display: block;
+  width: calc(var(--w) * var(--k));
+  height: calc(var(--h) * var(--k));
+  max-width: none;
+  pointer-events: none;
+  user-select: none;
+}
+
+/* (a turning piece turns round its pivot, its shadow round the pivot's shadow) */
+.board-piece-body { transform-origin: calc(var(--px) * var(--k)) calc(var(--py) * var(--k)); }
+.board-piece-shadow {
+  mix-blend-mode: multiply;
+  transform-origin: calc((var(--px) + var(--sx, 0)) * var(--k)) calc((var(--py) + var(--sy, 0)) * var(--k));
+}
+
+/* where each stands: the cloud in the open board along the top, over the words; the pinwheel
+   pinned on the photo's top right corner, the polka-dot flower on its bottom left and the hand
+   waving from its bottom right; the arrows beside it, pointing at it, level with the gap
+   between the heading and the paragraphs; the half-moon and the cube just under the words.
+   (Where the words are, js/about-pieces.js measures: --words-left, --words-right,
+   --heading-bottom, --text-top and --words-bottom.) */
+.pieces .cloud { left: calc(var(--words-x0) + (100% - var(--margin) - var(--words-x0)) * 0.6); top: calc(var(--nav) * 0.55 + var(--u) * 0.45); }
+.pieces .pinwheel { left: calc(var(--photo-x1) - var(--photo-width) * 0.07); top: calc(var(--photo-y0) + var(--photo-h) * 0.08); }
+.pieces .dot-flower { left: calc(var(--photo-x0) + var(--photo-width) * 0.08); top: calc(var(--photo-y1) - var(--photo-h) * 0.08); }
+.pieces .hand { left: calc(var(--photo-x1) - var(--u) * 0.2); top: calc(var(--photo-y1) + var(--u) * 0.3); }
+.pieces .arrow-1 { left: calc(var(--photo-x1) + var(--u) * 0.1); top: calc((var(--heading-bottom, 40vh) + var(--text-top, 40vh)) / 2); }
+.pieces .arrow-2 { left: calc(var(--photo-x1) + var(--u) * 0.55); top: calc((var(--heading-bottom, 40vh) + var(--text-top, 40vh)) / 2); }
+.pieces .half-moon { left: calc(var(--words-left, 60%) + var(--u) * 1.1); top: calc(var(--words-bottom, 90vh) + var(--u) * 1.3); }
+.pieces .cube { left: calc(var(--words-right, 90%) - var(--u) * 0.6); top: calc(var(--words-bottom, 90vh) + var(--u) * 1); }
+
+/* the cube's pupils, each on its eye (js/about-pieces.js turns them to the cursor) */
+.pieces .board-piece .pupil {
+  left: calc(var(--ex) * var(--u) - var(--px) * var(--k));
+  top: calc(var(--ey) * var(--u) * -1 - var(--py) * var(--k));
+}
+
+/* the hand can be clicked: it waves back eagerly (js/about-pieces.js) */
+.pieces .hand .board-piece-body { pointer-events: auto; }
+
+/* The cloud bobs and the pinwheel turns, as on the Yuki page (the hand waves by script). */
+.pieces .cloud img { animation: piece-bob 2.86s ease-in-out infinite alternate; }
+.pieces .pinwheel img { animation: piece-spin 12.57s linear infinite; }
+
+@keyframes piece-bob {
+  from { transform: translateY(calc(var(--u) * 0.08)); }
+  to { transform: translateY(calc(var(--u) * -0.08)); }
+}
+
+@keyframes piece-spin {
+  to { transform: rotate(-360deg); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .pieces .cloud img, .pieces .pinwheel img { animation: none; }
+}
+
+/* ---- the hanging cards (the second screen): a 3D scene of their own (js/hanging-cards.js),
+   see-through but for the cards, their rod and rings, and their shadows, over the screen (the
+   board showing through it). Pulled sideways on a touch screen, a card slides along its rod; up and down,
+   the page scrolls. */
+.cards-screen { position: relative; }
+
+.cards-scene {
+  position: absolute;
+  inset: 0;
+  display: block;
+  width: 100%;
+  height: 100%;
+  touch-action: pan-y;
+}
+
+/* On a tall screen the photo runs across the top, the words under it, and the board shows
+   little round them: only the pinwheel, the flower and the hand, round the photo. */
+@media (max-aspect-ratio: 9/10) {
+  .pieces {
+    --photo-x0: var(--margin);
+    --photo-x1: calc(100% - var(--margin));
+    --photo-width: calc(100% - var(--margin) * 2);
+    --photo-y1: 58vh;
+    --photo-h: calc(58vh - var(--nav));
+  }
+  .pieces .cloud, .pieces .arrow, .pieces .half-moon, .pieces .cube { display: none; }
+  .pieces .hand { left: calc(var(--photo-x1) - var(--u) * 0.6); top: calc(var(--photo-y1) + var(--u) * 0.35); }
+}
+
+body.about {
+  height: auto;
+  overflow: visible;
+  background: none;
+}
+
+.about-screen {
+  min-height: 100vh;
+}
+
+/* The first screen: the photo in a column on the left, within the page's margins and below
+   the nav bar, as tall as the screen allows between the two (and as wide, it being square,
+   but never wider than about half the window); the rest of the width beside it, a margin
+   apart, holds the name and words, centred. If they ever need more height than the screen
+   has, the screen grows to fit them. */
+.about-screen:first-child {
+  --photo-width: min(calc(100vh - var(--nav) - var(--margin)), calc(50vw - var(--margin)));
+  display: grid;
+  grid-template-columns: var(--photo-width) minmax(0, 1fr);
+  column-gap: var(--margin);
+  padding: var(--nav) var(--margin) var(--margin);
+}
+
+/* trimmed at its sides, if it has to be narrower than it is tall, to keep the face in view */
+.about-photo-frame {
+  position: relative;
+  height: calc(100vh - var(--nav) - var(--margin));
+  /* a little smaller and turned a little, as if set down by hand (only drawn so: its place
+     on the page, and everything around it, stay as they are) */
+  transform: scale(0.92) rotate(-2.5deg);
+}
+
+.about-photo {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: 38% center;
+}
+
+/* the name, in the same lettering as the name in the corner (its second line enlarged to the
+   first's width, by js/name.js), sized to the space */
+.about-hero {
+  display: grid;
+  place-items: center;
+  container-type: inline-size; /* so the name can be sized to the space (cqw) */
+}
+
+/* The heading ("About me"), in the name's lettering, and a few words about me under it: the
+   heading a little under the full width of the space (and no taller than it can be with the
+   words still fitting), the words in the body font, as wide as the heading. All on the same
+   left edge. The block's font size is the heading's. */
+.hero-block {
+  font-size: calc(0.9 * min(100cqw / var(--name-width, 6), 34vh / var(--name-height, 2)));
+}
+
+.hero-name {
+  margin: 0;
+  color: var(--ink);
+  font-family: var(--font-name);
+  font-weight: 900;
+  line-height: 0.95;
+  letter-spacing: -0.02em;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+.hero-name { font-size: 1em; line-height: 0.8; } /* its two lines close together, as in the corner */
+
+.hero-name .line { display: block; }
+
+/* each letter in a cell as wide as js/name.js measured it, centred, as in the corner name, so
+   the two lines come out exactly as wide as each other */
+.hero-name .ch {
+  display: inline-flex;
+  justify-content: center;
+  width: var(--w);
+  letter-spacing: 0; /* already counted in --w */
+}
+
+/* the words: as wide as the name (they don't widen the block; the name sets its width) */
+.hero-text {
+  contain: inline-size;
+  margin: calc(var(--unit) * 10) 0 0; /* (the first: its gap under the heading) */
+  color: var(--ink);
+  font-size: clamp(15px, 1.15vw, 18px);
+  font-weight: 500;
+  line-height: 1.6;
+  text-wrap: pretty;
+}
+
+/* the gap between its paragraphs: a blank line */
+.hero-text + .hero-text { margin-top: 1.6em; }
+
+/* A few words picked out in the site's pink, like a highlighter, the words staying ink
+   (they read more clearly on the pink than white does). A phrase broken across lines is
+   highlighted on each. */
+.hero-mark {
+  padding: 0 0.2em;
+  margin: 0 -0.05em;
+  background: #ff4f8a;
+  color: var(--ink);
+  -webkit-box-decoration-break: clone;
+  box-decoration-break: clone;
+}
+
+/* On a tall screen everything runs down the page in order, the photo across the top and the
+   name and words under it, the first screen growing to fit them if it must. */
+@media (max-aspect-ratio: 9/10) {
+  .about-screen:first-child {
+    grid-template-columns: minmax(0, 1fr);
+    row-gap: calc(var(--margin) * 2);
+    align-content: start;
+  }
+
+  .about-photo-frame { height: calc(58vh - var(--nav)); }
+  .about-photo { object-position: center 30%; }
+
+  .hero-block {
+    font-size: calc(0.9 * min(100cqw / var(--name-width, 6), 26vh / var(--name-height, 2)));
+  }
+}
+
+/* Hidden from view but not from screen readers; shown again while it has the keyboard's focus
+   (the Yuki page's "Back to the top" button, which does what the push button in its scene
+   does). */
+.visually-hidden:not(:focus-visible) {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+
+.back-to-top:focus-visible {
+  position: fixed;
+  left: 50%;
+  bottom: calc(var(--unit) * 3);
+  z-index: 20;
+  padding: 14px 22px;
+  border: 0;
+  border-radius: 999px;
+  background: var(--surface);
+  box-shadow: var(--shadow-small);
+  color: var(--ink);
+  font: inherit;
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  transform: translateX(-50%);
+  outline: 2px solid var(--ink);
+  outline-offset: 3px;
+}
+
+/* The Yuki page's machine, as one layer behind its opening video, which the first scroll
+   down brings forward (.screen: waiting close up, "front", until then). */
+.machine-screen {
+  position: fixed;
+  inset: 0;
+}
+
+/* The Yuki page, once the video has gone: a cream box behind the name and another behind the
+   menu button, so the machine and the cards pass under them, not through them. The cream is
+   the board's as it shows lit in the scene (its paint, C.cream, is lighter), so they read as
+   part of it. The name's box fits its letters (js/name.js sets --name-width and
+   --name-height, in multiples of its size), --pad round them. */
+.nav-box {
+  --pad: calc(var(--unit) * 1.5);
+  position: absolute;
+  border-radius: 14px;
+  background: #ebdfc6;
+  pointer-events: none;
+}
+
+.name-box {
+  top: calc(var(--nav-top) - var(--pad));
+  left: calc(var(--nav-side) - var(--pad));
+  width: calc(var(--title-size) * var(--name-width, 5.2) + 2 * var(--pad));
+  height: calc(var(--title-size) * var(--name-height, 1.9) + 2 * var(--pad));
+}
+
+/* (on a narrow screen the name sits a little lower: see ".title" further up) */
+@media (max-width: 640px) {
+  .name-box { top: calc(var(--unit) * 6 - var(--pad)); }
+}
+
+/* (the menu button: 40px square, its top and right as in ".menu-button") */
+.menu-box {
+  --pad: calc(var(--unit) * 0.5);
+  top: calc(var(--nav-top) - var(--unit) * 2.5 - var(--pad));
+  right: calc(var(--nav-side) - 11px - var(--pad));
+  width: calc(40px + 2 * var(--pad));
+  height: calc(40px + 2 * var(--pad));
+}
+
+/* The Yuki page's cards: the story's words and pictures, pinned to the machine's board in the
+   spaces the ball never goes through, with no card of their own drawn behind them.
+   js/tall-main.js sizes each to its space on the board and moves it with the view, so it
+   scrolls with the machine. Over the scene, under the nav bar and the menu; they let the
+   pointer through to the scene. */
+.board-cards {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.board-card {
+  position: absolute;
+  top: 0;
+  left: 0;
+  box-sizing: border-box;
+  overflow: hidden;
+  /* (no card drawn: its words and pictures stand straight on the board, in the same places) */
+  background: none;
+  color: var(--ink);
+  visibility: hidden; /* until placed (and, while out of view, not shown at all) */
+  pointer-events: auto; /* (its pictures open up when clicked) */
+  will-change: transform;
+  /* Its words and pictures are sized to it (in cqw: hundredths of its width), so they keep
+     their places as the card grows and shrinks with the window. */
+  container-type: size;
+  /* the Yuki page's palette */
+  --pink: #ff9dbb; --cream: #f6f0e1; --ink: #1c2b63;
+}
+
+/* What's on a card: its heading and words, and its pictures, laid out in one of a few ways:
+   a heading over a row of pictures (and maybe words, or a caption); a picture beside the
+   heading and words (card-side); or just the heading and words (card-words-only). */
+.card-inner {
+  display: flex;
+  flex-direction: column;
+  gap: 2.2cqw;
+  height: 100%;
+  padding: 4cqw 4.4cqw;
+}
+
+.card-title {
+  margin: 0;
+  color: var(--ink);
+  font-family: var(--font-name);
+  font-size: 5cqw;
+  font-weight: 900;
+  line-height: 0.9;
+  letter-spacing: -0.02em;
+  text-transform: uppercase;
+}
+
+.card-inner p {
+  max-width: 62em;
+  margin: 0;
+  font-size: 1.85cqw;
+  font-weight: 500;
+  line-height: 1.6;
+  text-wrap: pretty;
+}
+
+/* The people named in the cards' words, in bold (Poppins' heaviest weight here); one with a
+   site of their own links to it, underlined, turning the highlight pink when pointed at. */
+.card-inner .card-person {
+  color: inherit;
+  font-weight: 600;
+}
+
+.card-inner a.card-person {
+  text-decoration: underline;
+  text-decoration-thickness: 0.08em;
+  text-underline-offset: 0.18em;
+  transition: color 0.15s ease;
+}
+
+.card-inner a.card-person:hover,
+.card-inner a.card-person:focus-visible { color: #ff4f8a; }
+
+/* words alone: larger, with the heading over them, the two together in the middle */
+.card-words-only { justify-content: center; gap: 3cqw; }
+.card-words-only p { font-size: 2.5cqw; line-height: 1.5; }
+
+/* a picture beside the words (--split: how wide the picture's side is, to the words') */
+.card-side {
+  display: grid;
+  grid-template-columns: var(--split, 1.1fr) 1fr;
+  grid-template-rows: minmax(0, 1fr);
+  align-items: center;
+  gap: 4cqw;
+}
+.card-side > .card-picture { width: 100%; height: 100%; }
+.card-side > .card-picture img { object-fit: contain; }
+
+/* Pictures as die-cut stickers stuck on side by side, standing on the foot of their place
+   (each: --ar its shape, --h its height, --tilt how it's stuck on, and left or right). Each has
+   a white edge round its own outline, lying flat on the board, and, pointed at, grows and swings a
+   little further round, with a small overshoot, like the Work page's sticker, coming to the
+   front. They still open up full size when clicked (js/cards.js). */
+.card-stickers {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.card-picture.card-sticker {
+  position: absolute;
+  bottom: 3%;
+  height: var(--h, 90%);
+  aspect-ratio: var(--ar);
+  overflow: visible;
+  border-radius: 0;
+  transform: rotate(var(--tilt, 0deg));
+  transition: transform 0.3s cubic-bezier(0.3, 1.7, 0.5, 1);
+  /* (no shadow: stuck flat on the board, like the bottle label) */
+  filter:
+    drop-shadow(0.6cqw 0 0 var(--surface)) drop-shadow(-0.6cqw 0 0 var(--surface))
+    drop-shadow(0 0.6cqw 0 var(--surface)) drop-shadow(0 -0.6cqw 0 var(--surface));
+}
+
+/* (pointed at: js/cards.js marks the one whose own shape is under the pointer, not its
+   picture's clear corners) */
+.card-picture.card-sticker.is-pointed,
+.card-picture.card-sticker:focus-within {
+  z-index: 1;
+  transform: rotate(var(--tilt-hover, 0deg)) scale(1.14);
+}
+
+/* (the sticker grows as a whole, not its picture inside it; and the pointer only shows it
+   opens where it's over a sticker's shape) */
+.card-sticker img:hover,
+.card-sticker img:focus-visible { transform: none; }
+.card-sticker img:focus-visible { outline: none; }
+.card-sticker img { cursor: default; }
+.card-sticker.is-pointed img { cursor: zoom-in; }
+
+@media (prefers-reduced-motion: reduce) {
+  .card-picture.card-sticker { transition: none; }
+}
+.card-words {
+  display: flex;
+  flex-direction: column;
+  gap: 2.2cqw;
+}
+
+/* A row of pictures, side by side, all as tall as each other and as large as fit in what's
+   left of the card. (--n pictures, whose shapes, --ar, add up to --sum.) */
+.card-row {
+  flex: 1;
+  min-height: 0;
+  container-type: size;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 3%; /* (of the row's width: 3cqw, inside it) */
+}
+.card-row > .card-picture {
+  flex: none;
+  height: min(100cqh, (100cqw - (var(--n, 1) - 1) * 3cqw) / var(--sum, 1));
+  aspect-ratio: var(--ar);
+}
+
+/* A column of pictures of one shape (--ar), one under another, all as large as fit in what's
+   left of the card. (--n of them.) */
+.card-stack {
+  flex: 1;
+  min-height: 0;
+  container-type: size;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 3%; /* (of its height: 3cqh, inside it) */
+}
+.card-stack > .card-picture {
+  flex: none;
+  height: min((100cqh - (var(--n, 1) - 1) * 3cqh) / var(--n, 1), 100cqw / (var(--ar)));
+  aspect-ratio: var(--ar);
+}
+
+/* the style frames, two by two, each filling its place */
+.card-frames {
+  flex: 1;
+  min-height: 0;
+  display: grid;
+  grid-template: 1fr 1fr / 1fr 1fr;
+  gap: 1.6cqw;
+}
+
+/* A picture: shown whole (or, `fill`, covering its place, trimmed a little at two edges), with
+   rounded corners. It grows a little when pointed at, as a hint that it opens up. */
+.card-picture {
+  position: relative;
+  overflow: hidden;
+  border-radius: 1.4cqw;
+}
+.card-picture.ink { background: var(--ink); }
+.card-picture img,
+.card-picture video {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  cursor: zoom-in;
+  transition: transform 0.3s cubic-bezier(0.22, 1, 0.36, 1);
+}
+.card-picture.fill img,
+.card-picture.fill video { object-fit: cover; }
+.card-picture img:hover,
+.card-picture video:hover,
+.card-picture:has(.play-badge:hover) video { transform: scale(1.04); }
+.card-picture img:focus-visible,
+.card-picture video:focus-visible { outline: 3px solid var(--ink); outline-offset: -3px; }
+.card-picture .play-badge svg { width: 42%; height: 42%; color: var(--ink); fill: currentColor; }
+.card-picture:hover .play-badge { background: var(--cream); }
+
+.card-caption {
+  margin: -1cqw 0 0;
+  font-size: 1.3cqw !important;
+  text-align: center;
+  opacity: 0.7;
+}
+
+/* A row of pictures only as tall as they are (fit), across the card's width within its padding
+   (91.2cqw, less the row's gaps), or less if there isn't room: so its caption sits just under
+   it, the two together in the middle of what's left under the heading. */
+.card-row.fit {
+  flex: 0 1 auto;
+  height: calc((91.2cqw - (var(--n, 1) - 1) * 0.03 * 91.2cqw) / var(--sum, 1));
+  margin-top: auto;
+}
+.card-row.fit + .card-caption { margin-bottom: auto; }

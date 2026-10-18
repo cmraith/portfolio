@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Marbie</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <main id="stage" aria-label="Marbie, a virtual pet. Click the device's buttons to play."></main>
+
+  <p id="status" class="status" aria-live="polite"></p>
+
+  <footer class="help">
+    <div class="pad" aria-label="On-screen buttons">
+      <button type="button" data-btn="up" aria-label="Up">▲</button>
+      <button type="button" data-btn="select" aria-label="Select">●</button>
+      <button type="button" data-btn="down" aria-label="Down">▼</button>
+    </div>
+  </footer>
+
+  <div class="loading" aria-hidden="true">Loading…</div>
+
+  <script src="https://cdn.jsdelivr.net/npm/three@0.149.0/build/three.min.js"></script>
+  <script src="js/assets.js"></script>
+  <script src="js/game.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
